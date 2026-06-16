@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>LiteralClub · Próximas lecturas</title>
+<meta content="Próximas lecturas de LiteralClub: sagas, fantasía, oscura, política, romance, ligero y vampiros." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&amp;family=Instrument+Sans:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --bg: #F5F3F0;
+      --surface: #FFFCF8;
+      --surface-soft: #F8F5FF;
+      --ink: #18161D;
+      --muted: rgba(24,22,29,.64);
+      --line: rgba(45,33,70,.10);
+      --accent: #6B5CFF;
+      --accent-deep: #352C8C;
+      --accent-soft: #EEEAFE;
+      --lime: #CFEF70;
+      --lime-soft: #F2F8DF;
+      --radius: 22px;
+      --shadow: 0 14px 34px rgba(30,20,58,.07);
+      --shadow-hover: 0 18px 42px rgba(30,20,58,.11);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: 'Instrument Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #F7F5F2 0%, #F3F0EB 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      border: 0;
+      background: none;
+      padding: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1040px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 18px 0 44px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(238,234,254,.9) 0%, rgba(255,252,248,1) 48%, rgba(242,248,223,.85) 100%);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 5vw, 52px);
+      margin-bottom: 14px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-circle {
+      width: 56px;
+      height: 56px;
+      flex: 0 0 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #FFFDF8;
+      border: 1px solid rgba(37,30,36,.17);
+      color: #251E24;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      box-shadow: 0 10px 25px rgba(55,48,40,.07);
+    }
+
+    .handle {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: lowercase;
+      color: var(--accent-deep);
+    }
+
+    .microcopy {
+      margin-top: 2px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #FFFFFF;
+      border: 1px solid rgba(107,92,255,.14);
+      color: var(--accent-deep);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 18px rgba(30,20,58,.05);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: .88;
+      letter-spacing: -.055em;
+    }
+
+    h1 em {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--accent-deep);
+    }
+
+    .hero-sub {
+      max-width: 680px;
+      margin: 18px 0 0;
+      font-size: clamp(15px, 2vw, 18px);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(107,92,255,.12);
+      background: rgba(255,255,255,.85);
+      box-shadow: 0 6px 14px rgba(30,20,58,.04);
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+      border-color: rgba(107,92,255,.24);
+      background: #FFFFFF;
+    }
+
+    .tag-icon { font-size: 14px; line-height: 1; }
+
+    .mood-block {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow {
+      margin-bottom: 6px;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: .98;
+      letter-spacing: -.04em;
+    }
+
+    .mood-copy,
+    .section-desc {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .mood-copy { margin-bottom: 14px; max-width: 620px; }
+
+    .mood-grid {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .mood-item {
+      min-height: 70px;
+      padding: 10px 8px;
+      border: 1px solid rgba(107,92,255,.10);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FBFAFF 100%);
+      box-shadow: 0 8px 18px rgba(30,20,58,.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 800;
+      color: rgba(24,22,29,.72);
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .mood-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(30,20,58,.08);
+      border-color: rgba(107,92,255,.22);
+    }
+
+    .mood-item.is-active {
+      background: linear-gradient(180deg, #6B5CFF 0%, #5143E7 100%);
+      border-color: rgba(53,44,140,.28);
+      color: #FFFFFF;
+      box-shadow: 0 14px 26px rgba(53,44,140,.22);
+    }
+
+    .mood-icon { font-size: 17px; line-height: 1; }
+
+    .section-head {
+      margin: 0 0 14px;
+    }
+
+    .section-desc { max-width: 620px; }
+
+    .books {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .book-card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFFCF8 100%);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      min-height: 212px;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .book-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 22px 22px 0 0;
+    }
+
+    .book-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(107,92,255,.16);
+    }
+
+    .book-card.is-hidden {
+      display: none !important;
+    }
+
+    .books.is-filtered .book-card {
+      animation: cardIn .18s ease both;
+    }
+
+    @keyframes cardIn {
+      from { opacity: .35; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .book-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .rank {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: var(--lime-soft);
+      border: 1px solid rgba(171,205,79,.22);
+      color: #54661C;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .book-title {
+      margin: 0 0 4px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(24px, 2.8vw, 32px);
+      line-height: 1;
+      letter-spacing: -.035em;
+      color: #171318;
+    }
+
+    .book-author {
+      margin: 0 0 12px;
+      color: rgba(53,44,140,.72);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    .review {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid rgba(107,92,255,.10);
+      color: rgba(24,22,29,.72);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .chip-icon { font-size: 12px; }
+
+    .empty-state {
+      display: none;
+      margin-top: 12px;
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px dashed rgba(107,92,255,.22);
+      background: rgba(255,255,255,.75);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .empty-state.is-visible { display: block; }
+
+    .footer {
+      margin-top: 30px;
+      padding: 22px 0 4px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 22px;
+      color: var(--ink);
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 10px, 1040px);
+        padding-top: 7px;
+        padding-bottom: 26px;
+      }
+
+      .hero {
+        padding: 15px 13px 16px;
+        border-radius: 22px;
+        margin-bottom: 10px;
+      }
+
+      .brand-row {
+        margin-bottom: 13px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .logo-circle {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+        font-size: 16px;
+      }
+
+      .handle {
+        font-size: 9.5px;
+        letter-spacing: .12em;
+      }
+
+      .microcopy {
+        font-size: 9.5px;
+        line-height: 1.18;
+      }
+
+      .hero-kicker {
+        padding: 4px 8px;
+        margin-bottom: 8px;
+        font-size: 8px;
+        letter-spacing: .14em;
+      }
+
+      h1 {
+        font-size: clamp(32px, 10.7vw, 46px);
+        line-height: .92;
+        letter-spacing: -.04em;
+      }
+
+      .hero-sub {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 1.34;
+      }
+
+      .hero-tags {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 5px;
+        margin-top: 12px;
+      }
+
+      .tag {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+        padding: 7px 6px;
+        font-size: 8.9px;
+        line-height: 1.06;
+        box-shadow: none;
+      }
+
+      .tag-icon {
+        font-size: 10px;
+      }
+
+      .mood-block {
+        padding: 12px;
+        border-radius: 18px;
+        margin-bottom: 14px;
+      }
+
+      .mood-block .eyebrow {
+        display: none;
+      }
+
+      h2 {
+        font-size: clamp(24px, 8vw, 32px);
+      }
+
+      .mood-copy,
+      .section-desc {
+        display: none;
+      }
+
+      .mood-grid {
+        grid-template-columns: repeat(8, 58px);
+        gap: 5px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .mood-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .mood-item {
+        min-height: 52px;
+        padding: 6px 4px;
+        border-radius: 13px;
+        font-size: 8.7px;
+        gap: 3px;
+      }
+
+      .mood-icon {
+        font-size: 13px;
+      }
+
+      .section-head {
+        margin-bottom: 8px;
+      }
+
+      .section-head .eyebrow {
+        margin-bottom: 4px;
+        font-size: 8.4px;
+        letter-spacing: .17em;
+      }
+
+      .section-head h2 {
+        font-size: 24px;
+        line-height: .95;
+      }
+
+      .books {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+      }
+
+      .book-card {
+        min-height: 168px;
+        padding: 10px;
+        border-radius: 16px;
+      }
+
+      .book-card::before {
+        height: 3px;
+        border-radius: 16px 16px 0 0;
+      }
+
+      .book-top {
+        margin-bottom: 6px;
+      }
+
+      .rank {
+        width: 26px;
+        height: 26px;
+        flex-basis: 26px;
+        border-radius: 9px;
+        font-size: 13px;
+      }
+
+      .status-pill {
+        padding: 4px 6px;
+        font-size: 8.3px;
+        letter-spacing: .04em;
+      }
+
+      .book-title {
+        font-size: clamp(17px, 5.3vw, 21px);
+        line-height: .96;
+        margin-bottom: 2px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .book-author {
+        margin-bottom: 5px;
+        font-size: 8.6px;
+        letter-spacing: .025em;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .review {
+        font-size: 10.6px;
+        line-height: 1.28;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .chips {
+        gap: 4px;
+        padding-top: 8px;
+      }
+
+      .chip {
+        padding: 4px 6px;
+        font-size: 8.3px;
+        white-space: normal;
+        line-height: 1.08;
+      }
+
+      .chip-icon {
+        font-size: 10px;
+      }
+
+      .footer {
+        margin-top: 16px;
+        padding-top: 14px;
+        font-size: 11px;
+      }
+
+      .footer strong {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .wrap {
+        width: min(100% - 8px, 1040px);
+      }
+
+      .hero-tags {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mood-grid {
+        grid-template-columns: repeat(8, 54px);
+      }
+
+      .book-card {
+        min-height: 162px;
+        padding: 9px;
+      }
+
+      .book-title {
+        font-size: clamp(16px, 5vw, 19px);
+      }
+
+      .review {
+        font-size: 10.2px;
+      }
+
+      .chip {
+        font-size: 7.9px;
+        padding: 3px 5px;
+      }
+    }
+
+    /* REDISEÑO COHERENTE: plum editorial + crema cálido, sin fondo raro */
+    :root {
+      --bg: #F2EDE8;
+      --surface: #FFF9F2;
+      --surface-soft: #F5EEF8;
+      --ink: #211923;
+      --muted: rgba(33,25,35,.66);
+      --line: rgba(49,32,55,.10);
+      --accent: #6F4B7A;
+      --accent-deep: #312037;
+      --accent-soft: #EFE3F4;
+      --soft-accent-bg: #F6EFF8;
+      --radius: 22px;
+      --shadow: 0 14px 34px rgba(49,32,55,.075);
+      --shadow-hover: 0 18px 42px rgba(49,32,55,.12);
+    }
+
+    body {
+      background: #F2EDE8 !important;
+      color: var(--ink) !important;
+    }
+
+    .hero {
+      background: #312037 !important;
+      color: #FFF9F2 !important;
+      border-color: rgba(255,249,242,.12) !important;
+      box-shadow: 0 18px 42px rgba(49,32,55,.18) !important;
+    }
+
+    .hero *,
+    .hero h1,
+    .hero h1 em,
+    .hero .handle,
+    .hero .microcopy,
+    .hero .hero-sub {
+      color: inherit !important;
+    }
+
+    .hero .microcopy,
+    .hero .hero-sub {
+      opacity: .72;
+    }
+
+    .logo-circle {
+      background: #FFFDF8 !important;
+      color: #251E24 !important;
+      border-color: rgba(37,30,36,.17) !important;
+    }
+
+    .hero-kicker {
+      background: rgba(255,249,242,.10) !important;
+      color: #FFF9F2 !important;
+      border-color: rgba(255,249,242,.18) !important;
+      box-shadow: none !important;
+    }
+
+    .hero-tags .tag {
+      background: rgba(255,249,242,.10) !important;
+      color: #FFF9F2 !important;
+      border-color: rgba(255,249,242,.16) !important;
+      box-shadow: none !important;
+    }
+
+    .hero-tags .tag:hover {
+      background: rgba(255,249,242,.16) !important;
+      border-color: rgba(255,249,242,.28) !important;
+    }
+
+    .mood-block,
+    .book-card {
+      background: #FFF9F2 !important;
+      border-color: rgba(49,32,55,.09) !important;
+      box-shadow: var(--shadow) !important;
+    }
+
+    .mood-block {
+      background: #FFF9F2 !important;
+    }
+
+    .mood-item {
+      background: #F7F0F8 !important;
+      border-color: rgba(111,75,122,.10) !important;
+      color: rgba(33,25,35,.72) !important;
+      box-shadow: 0 8px 18px rgba(49,32,55,.04) !important;
+    }
+
+    .mood-item:hover {
+      border-color: rgba(111,75,122,.22) !important;
+      box-shadow: 0 12px 24px rgba(49,32,55,.08) !important;
+    }
+
+    .mood-item.is-active {
+      background: #312037 !important;
+      color: #FFF9F2 !important;
+      border-color: #312037 !important;
+      box-shadow: 0 14px 26px rgba(49,32,55,.18) !important;
+    }
+
+    .eyebrow,
+    .book-author {
+      color: var(--accent) !important;
+    }
+
+    h2,
+    .book-title {
+      color: var(--ink) !important;
+    }
+
+    .section-desc,
+    .mood-copy,
+    .review,
+    .footer,
+    .empty-state {
+      color: var(--muted) !important;
+    }
+
+    .book-card::before {
+      background: #6F4B7A !important;
+    }
+
+    .rank {
+      background: #EFE3F4 !important;
+      color: #312037 !important;
+    }
+
+    .status-pill {
+      background: #EFE3F4 !important;
+      border-color: rgba(111,75,122,.14) !important;
+      color: #312037 !important;
+    }
+
+    .chip {
+      background: #F7F0F8 !important;
+      border-color: rgba(111,75,122,.10) !important;
+      color: rgba(33,25,35,.72) !important;
+    }
+
+    .book-card:hover {
+      border-color: rgba(111,75,122,.18) !important;
+      box-shadow: var(--shadow-hover) !important;
+    }
+
+    .footer strong {
+      color: var(--ink) !important;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        background: #F2EDE8 !important;
+      }
+
+      .hero {
+        background: #312037 !important;
+        box-shadow: 0 10px 24px rgba(49,32,55,.16) !important;
+      }
+
+      .mood-block,
+      .book-card {
+        background: #FFF9F2 !important;
+      }
+
+      .hero-tags .tag {
+        background: rgba(255,249,242,.11) !important;
+      }
+
+      .mood-item,
+      .chip {
+        background: #F7F0F8 !important;
+      }
+    }
+
+  
+
+    /* FIX UX: un único filtro visible completo en móvil, sin scroll lateral */
+    .mood-block {
+      display: none !important;
+    }
+
+    .hero-tags {
+      display: grid !important;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 7px !important;
+      overflow: visible !important;
+      padding-bottom: 0 !important;
+      margin-top: 16px !important;
+    }
+
+    .hero-tags .tag {
+      width: 100%;
+      min-width: 0;
+      justify-content: center;
+      text-align: center;
+      white-space: normal;
+      line-height: 1.05;
+      cursor: pointer;
+      border-color: rgba(255,249,242,.18) !important;
+    }
+
+    .hero-tags .tag.is-active {
+      background: #FFF9F2 !important;
+      color: #312037 !important;
+      border-color: #FFF9F2 !important;
+      box-shadow: 0 8px 18px rgba(0,0,0,.10) !important;
+      transform: translateY(-1px);
+    }
+
+    .hero-tags .tag.is-active .tag-icon {
+      filter: none;
+    }
+
+    @media (max-width: 760px) {
+      .hero-tags {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+        margin-top: 11px !important;
+      }
+
+      .hero-tags .tag {
+        padding: 6px 4px !important;
+        font-size: 8.6px !important;
+        gap: 3px !important;
+        min-height: 31px;
+      }
+
+      .hero-tags .tag-icon {
+        font-size: 9.6px !important;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-tags {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 4px !important;
+      }
+
+      .hero-tags .tag {
+        padding: 5px 3px !important;
+        font-size: 7.9px !important;
+        min-height: 29px;
+      }
+
+      .hero-tags .tag-icon {
+        font-size: 8.8px !important;
+      }
+    }
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+<div class="brand-row">
+<div aria-label="LiteralClub" class="brand">
+<div class="logo-circle">lc</div>
+<div>
+<div class="handle"><a href="https://www.instagram.com/literalclub_?igsh=MTBmZHA0MzE4ZGZobA%3D%3D&amp;utm_source=qr">@literalclub_</a></div>
+<div class="microcopy">dos amigas · muchos libros · cero filtros</div>
+</div>
+</div>
+</div>
+<div class="hero-kicker">lista pendiente</div>
+<h1>próximas <br/><em>lecturas</em></h1>
+<p class="hero-sub">La lista que juramos que íbamos a reducir. Spoiler: no lo hemos hecho. Y esto es solo una pequeña parte.</p>
+<div aria-label="Filtro único por mood" class="hero-tags"><button aria-pressed="true" class="tag filter-chip is-active" data-filter="todo" type="button"><span class="tag-icon">✦</span><span>todo</span></button><button aria-pressed="false" class="tag filter-chip" data-filter="saga" type="button"><span class="tag-icon">📚</span><span>saga</span></button><button aria-pressed="false" class="tag filter-chip" data-filter="fantasia" type="button"><span class="tag-icon">✨</span><span>fantasía</span></button><button aria-pressed="false" class="tag filter-chip" data-filter="oscura" type="button"><span class="tag-icon">🌑</span><span>oscura</span></button><button aria-pressed="false" class="tag filter-chip" data-filter="politica" type="button"><span class="tag-icon">♟️</span><span>política</span></button><button aria-pressed="false" class="tag filter-chip" data-filter="romance" type="button"><span class="tag-icon">💌</span><span>romance</span></button><button aria-pressed="false" class="tag filter-chip" data-filter="ligero" type="button"><span class="tag-icon">☀️</span><span>ligero</span></button><button aria-pressed="false" class="tag filter-chip" data-filter="vampiros" type="button"><span class="tag-icon">🩸</span><span>vampiros</span></button></div>
+</header>
+
+<section aria-labelledby="list-title">
+<div class="section-head">
+<div class="eyebrow">próximas lecturas</div>
+<h2 id="list-title">nuestra tbr</h2>
+<p class="section-desc">Usa el filtro superior para ver la lista por mood sin perderte entre botones repetidos.</p>
+</div>
+<div class="books">
+<article class="book-card" data-tropes="saga romance">
+<div class="book-top">
+<span class="rank">1</span>
+<span class="status-pill">TBR</span>
+</div>
+<h3 class="book-title">Saving 6</h3>
+<p class="book-author">Chloe Walsh</p>
+<p class="review">Quiero seguir con Los chicos de Tommen.</p>
+<div class="chips"><span class="chip"><span class="chip-icon">📚</span><span>saga</span></span><span class="chip"><span class="chip-icon">💌</span><span>romance</span></span><span class="chip"><span class="chip-icon">🏉</span><span>drama deportivo</span></span></div>
+</article>
+<article class="book-card" data-tropes="saga fantasia oscura romance">
+<div class="book-top">
+<span class="rank">2</span>
+<span class="status-pill">TBR</span>
+</div>
+<h3 class="book-title">Los lazos de Hércules</h3>
+<p class="book-author">Jasmine Mas</p>
+<p class="review">Quiero seguir con la bilogía después de La sangre de Hércules.</p>
+<div class="chips"><span class="chip"><span class="chip-icon">🏛️</span><span>mitología</span></span><span class="chip"><span class="chip-icon">🖤</span><span>dark romance</span></span><span class="chip"><span class="chip-icon">📚</span><span>continuación</span></span></div>
+</article>
+<article class="book-card" data-tropes="fantasia oscura">
+<div class="book-top">
+<span class="rank">3</span>
+<span class="status-pill">TBR</span>
+</div>
+<h3 class="book-title">Flores malditas. Flor de sangre</h3>
+<p class="book-author">Nerea Llanes</p>
+<p class="review">Me llama por el toque de fantasía juvenil oscura.</p>
+<div class="chips"><span class="chip"><span class="chip-icon">🌑</span><span>fantasía oscura</span></span><span class="chip"><span class="chip-icon">✨</span><span>juvenil</span></span><span class="chip"><span class="chip-icon">🥀</span><span>maldición</span></span></div>
+</article>
+<article class="book-card" data-tropes="fantasia oscura romance vampiros">
+<div class="book-top">
+<span class="rank">4</span>
+<span class="status-pill">TBR</span>
+</div>
+<h3 class="book-title">Los que vamos a morir</h3>
+<p class="book-author">Stacia Stark</p>
+<p class="review">Lo tengo fichado por vampiros, gladiadores y romantasy más oscura.</p>
+<div class="chips"><span class="chip"><span class="chip-icon">🩸</span><span>vampiros</span></span><span class="chip"><span class="chip-icon">⚔️</span><span>gladiadores</span></span><span class="chip"><span class="chip-icon">🌘</span><span>romantasy oscura</span></span></div>
+</article>
+<article class="book-card" data-tropes="fantasia politica romance">
+<div class="book-top">
+<span class="rank">5</span>
+<span class="status-pill">TBR</span>
+</div>
+<h3 class="book-title">Metal Slinger</h3>
+<p class="book-author">Rachel Schneider</p>
+<p class="review">Me apetece por la mezcla de magia, romance y política.</p>
+<div class="chips"><span class="chip"><span class="chip-icon">🪄</span><span>magia</span></span><span class="chip"><span class="chip-icon">💌</span><span>romance</span></span><span class="chip"><span class="chip-icon">♟️</span><span>política</span></span></div>
+</article>
+<article class="book-card" data-tropes="fantasia politica romance">
+<div class="book-top">
+<span class="rank">6</span>
+<span class="status-pill">TBR</span>
+</div>
+<h3 class="book-title">La heredera de Jasad</h3>
+<p class="book-author">Sara Hashem</p>
+<p class="review">Me interesa por la fantasía política y el enemies to lovers.</p>
+<div class="chips"><span class="chip"><span class="chip-icon">♟️</span><span>fantasía política</span></span><span class="chip"><span class="chip-icon">⚔️</span><span>enemies to lovers</span></span><span class="chip"><span class="chip-icon">👑</span><span>heredera</span></span></div>
+</article>
+<article class="book-card" data-tropes="romance ligero">
+<div class="book-top">
+<span class="rank">7</span>
+<span class="status-pill">TBR</span>
+</div>
+<h3 class="book-title">Ríete de las bodas</h3>
+<p class="book-author">Megan Maxwell</p>
+<p class="review">Romance ligero, divertido y perfecto para desconectar.</p>
+<div class="chips"><span class="chip"><span class="chip-icon">💘</span><span>romcom</span></span><span class="chip"><span class="chip-icon">🥂</span><span>bodas</span></span><span class="chip"><span class="chip-icon">☀️</span><span>ligero</span></span></div>
+</article>
+<article class="book-card" data-tropes="saga fantasia">
+<div class="book-top">
+<span class="rank">8</span>
+<span class="status-pill">TBR</span>
+</div>
+<h3 class="book-title">Casa de cielo y aliento</h3>
+<p class="book-author">Sarah J. Maas</p>
+<p class="review">Lo leeré si sigo con Ciudad Medialuna.</p>
+<div class="chips"><span class="chip"><span class="chip-icon">🌆</span><span>fantasía urbana</span></span><span class="chip"><span class="chip-icon">📚</span><span>saga</span></span><span class="chip"><span class="chip-icon">✨</span><span>Ciudad Medialuna</span></span></div>
+</article>
+</div>
+<div class="empty-state">No hay títulos en ese mood ahora mismo.</div>
+</section>
+<footer class="footer">
+<strong><a href="https://www.instagram.com/literalclub_?igsh=MTBmZHA0MzE4ZGZobA%3D%3D&amp;utm_source=qr">literalclub_</a></strong>
+<span>tbr, tropes y decisiones lectoras cuestionables</span>
+</footer>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = Array.from(document.querySelectorAll('.hero-tags [data-filter]'));
+      const cards = Array.from(document.querySelectorAll('.book-card[data-tropes]'));
+      const booksGrid = document.querySelector('.books');
+      const emptyState = document.querySelector('.empty-state');
+
+      function applyFilter(filter) {
+        const nextFilter = filter || 'todo';
+        let visibleCount = 0;
+
+        filterButtons.forEach(button => {
+          const active = button.dataset.filter === nextFilter;
+          button.classList.toggle('is-active', active);
+          button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        cards.forEach(card => {
+          const tropes = (card.dataset.tropes || '').split(' ');
+          const shouldShow = nextFilter === 'todo' || tropes.includes(nextFilter);
+          card.classList.toggle('is-hidden', !shouldShow);
+          if (shouldShow) visibleCount += 1;
+        });
+
+        if (booksGrid) {
+          booksGrid.classList.toggle('is-filtered', nextFilter !== 'todo');
+        }
+
+        if (emptyState) {
+          emptyState.classList.toggle('is-visible', visibleCount === 0);
+        }
+      }
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => applyFilter(button.dataset.filter));
+        button.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            applyFilter(button.dataset.filter);
+          }
+        });
+      });
+
+      applyFilter('todo');
+    });
+</script></body>
+</html>
