@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>LiteralClub · Romantasy / Fantasía</title>
-<meta content="Selección de romantasy y fantasía de LiteralClub: dragones, academia, mitología, dark romance y slow burn." name="description"/>
+<title>LiteralClub · Romance Juvenil / New Adult</title>
+<meta content="Selección de romance juvenil y new adult de LiteralClub: sports romance, drama, universidad, small town y mucho salseo emocional." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&amp;family=Instrument+Sans:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
@@ -1825,6 +1825,195 @@
         transform: none;
       }
     }
+
+
+    /* NUEVA CATEGORÍA: ROMANCE JUVENIL / NEW ADULT */
+    :root {
+      --surface: #FFFCFA;
+      --surface-2: #FFF4EF;
+      --accent: #B85D55;
+      --accent-soft: #F7E7E2;
+      --accent-deep: #7B3937;
+      --accent-2: #B79A6B;
+      --accent-2-soft: #F4ECDD;
+      --line: rgba(123,57,55,.12);
+      --shadow: 0 20px 54px rgba(72,38,34,.08);
+      --shadow-hover: 0 24px 58px rgba(72,38,34,.13);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(247,231,226,.72), transparent 28%),
+        radial-gradient(circle at top right, rgba(244,236,221,.72), transparent 26%),
+        #F6F0EA;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #FFFCFA 0%, #FFF7F2 100%);
+    }
+
+    .hero::after {
+      content: "♡";
+      color: rgba(184,93,85,.10);
+      transform: rotate(-8deg);
+    }
+
+    .hero-kicker,
+    .tag,
+    .chip {
+      border-color: rgba(184,93,85,.15);
+    }
+
+    .hero-kicker,
+    .rank {
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+    }
+
+    .tag {
+      background: #FFF4EF;
+      box-shadow: 0 8px 18px rgba(184,93,85,.06);
+    }
+
+    .score-block {
+      background: linear-gradient(180deg, rgba(247,231,226,.66) 0%, rgba(255,252,250,1) 42%);
+    }
+
+    .scale-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .scale-item {
+      background: #FFFFFF;
+      border-color: rgba(184,93,85,.14);
+    }
+
+    .scale-item.is-active {
+      border-color: rgba(123,57,55,.38) !important;
+      background: #F7E7E2 !important;
+      box-shadow: 0 12px 28px rgba(123,57,55,.14) !important;
+    }
+
+    .book-card {
+      background: linear-gradient(180deg, #FFFEFC 0%, #FFF8F4 100%);
+    }
+
+    .book-card::before {
+      background: var(--accent) !important;
+    }
+
+    .rating {
+      background: rgba(184,93,85,.10);
+      border-color: rgba(184,93,85,.14);
+      color: var(--accent-deep);
+    }
+
+    .star::before {
+      color: rgba(123,57,55,.18);
+    }
+
+    .star::after {
+      color: var(--accent-deep);
+    }
+
+    .book-author {
+      color: rgba(123,57,55,.72);
+    }
+
+    .chip {
+      background: #FFF4EF;
+      color: rgba(45,32,29,.72);
+    }
+
+    @media (max-width: 760px) {
+      body {
+        background: #F6F0EA;
+      }
+
+      .hero {
+        background: linear-gradient(180deg, #FFF8F4 0%, #FFFCFA 100%);
+      }
+
+      .hero-tags {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .scale-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        overflow: visible;
+      }
+
+      .scale-item {
+        min-height: 60px;
+      }
+
+      .book-card {
+        background: linear-gradient(180deg, #FFFEFC 0%, #FFF8F4 100%);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .scale-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      }
+
+      .hero-tags {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* ESCALA FIJA UNIVERSAL */
+    .scale-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    }
+
+    .scale-item.is-disabled {
+      opacity: .42;
+      cursor: default;
+      pointer-events: none;
+      filter: grayscale(.18);
+    }
+
+    .scale-item.is-disabled .scale-note {
+      color: rgba(33,24,34,.38);
+    }
+
+    @media (max-width: 760px) {
+      .scale-grid {
+        grid-template-columns: repeat(5, minmax(58px, 1fr)) !important;
+        gap: 5px;
+      }
+
+      .scale-item {
+        min-height: 62px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .scale-grid {
+        grid-template-columns: repeat(5, minmax(52px, 1fr)) !important;
+        gap: 4px;
+      }
+
+      .scale-item {
+        min-height: 60px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .scale-grid {
+        overflow-x: auto;
+        grid-template-columns: repeat(5, 56px) !important;
+      }
+    }
+
+    /* ESCALA SIEMPRE ACTIVA */
+    .scale-item.is-disabled {
+      opacity: 1 !important;
+      cursor: pointer !important;
+      pointer-events: auto !important;
+      filter: none !important;
+    }
 </style>
 </head>
 <body>
@@ -1839,165 +2028,32 @@
 </div>
 </div>
 </div>
-<div class="hero-kicker">ranking lector</div>
-<h1>romantasy <br/><em>/ fantasía</em></h1>
-<p class="hero-sub">Dragones, academias mortales, mitología, slow burn y romances con tensión suficiente para enganchar desde la primera página.</p>
-<div aria-label="Temas del ranking" class="hero-tags">
-<span class="tag"><span class="tag-icon">🐉</span>dragones</span>
-<span class="tag"><span class="tag-icon">🏰</span>academias mortales</span>
-<span class="tag"><span class="tag-icon">🏛️</span>mitología</span>
-<span class="tag"><span class="tag-icon">🖤</span>dark romance</span>
-<span class="tag"><span class="tag-icon">🫧</span>slow burn</span>
-</div>
+<div class="hero-kicker">ranking romance</div>
+<h1>romance juvenil <br/><em>/ new adult</em></h1>
+<p class="hero-sub">Sports romance, drama juvenil, universidad, small town y romances emocionales de esos que se leen rápido y se sienten más de lo previsto.</p>
+<div aria-label="Temas del ranking" class="hero-tags"><span class="tag"><span class="tag-icon">🏒</span>sports romance</span><span class="tag"><span class="tag-icon">🎓</span>universidad</span><span class="tag"><span class="tag-icon">💌</span>drama juvenil</span><span class="tag"><span class="tag-icon">🏡</span>small town</span><span class="tag"><span class="tag-icon">🌿</span>verano</span></div>
 </header>
 <section aria-label="Escala de puntuación" class="score-panel">
 <article class="score-block">
 <div class="eyebrow">literalclub</div>
 <h2>escala de puntuación</h2>
 <br>
-<div class="scale-grid">
-<div aria-label="Filtrar libros con valoración 5/5" aria-pressed="false" class="scale-item" data-filter-score="5" role="button" tabindex="0">
-<div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span></div>
-<div class="scale-label">5/5</div>
-<div class="scale-note">obsesión total</div>
-</div>
-<div aria-label="Filtrar libros con valoración 4/5" aria-pressed="false" class="scale-item" data-filter-score="4" role="button" tabindex="0">
-<div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></div>
-<div class="scale-label">4/5</div>
-<div class="scale-note">muy recomendado</div>
-</div>
-<div aria-label="Filtrar libros con valoración 3/5" aria-pressed="false" class="scale-item" data-filter-score="3" role="button" tabindex="0">
-<div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span><span class="star empty"></span></div>
-<div class="scale-label">3/5</div>
-<div class="scale-note">está bien</div>
-</div>
-<div aria-label="Filtrar libros con valoración 2/5" aria-pressed="false" class="scale-item" data-filter-score="2" role="button" tabindex="0">
-<div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star full"></span><span class="star empty"></span><span class="star empty"></span><span class="star empty"></span></div>
-<div class="scale-label">2/5</div>
-<div class="scale-note">no conectamos</div>
-</div>
-<div aria-label="Filtrar libros con valoración 1/5" aria-pressed="false" class="scale-item" data-filter-score="1" role="button" tabindex="0">
-<div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star empty"></span><span class="star empty"></span><span class="star empty"></span><span class="star empty"></span></div>
-<div class="scale-label">1/5</div>
-<div class="scale-note">lo abandonamos</div>
-</div>
-</div>
+<div class="scale-grid"><div aria-label="Filtrar libros con valoración 5/5" aria-pressed="false" class="scale-item" data-filter-score="5" role="button" tabindex="0"><div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span></div><div class="scale-label">5/5</div><div class="scale-note">obsesión total</div></div><div aria-label="Filtrar libros con valoración 4/5" aria-pressed="false" class="scale-item" data-filter-score="4" role="button" tabindex="0"><div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></div><div class="scale-label">4/5</div><div class="scale-note">muy recomendado</div></div><div aria-label="Filtrar libros con valoración 3/5" aria-pressed="false" class="scale-item" data-filter-score="3" role="button" tabindex="0"><div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span><span class="star empty"></span></div><div class="scale-label">3/5</div><div class="scale-note">está bien</div></div><div aria-label="Filtrar libros con valoración 2/5" aria-pressed="false" class="scale-item" data-filter-score="2" role="button" tabindex="0"><div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star full"></span><span class="star empty"></span><span class="star empty"></span><span class="star empty"></span></div><div class="scale-label">2/5</div><div class="scale-note">nos flojeó</div></div><div aria-label="Filtrar libros con valoración 1/5" aria-pressed="false" class="scale-item" data-filter-score="1" role="button" tabindex="0"><div aria-hidden="true" class="scale-stars stars"><span class="star full"></span><span class="star empty"></span><span class="star empty"></span><span class="star empty"></span><span class="star empty"></span></div><div class="scale-label">1/5</div><div class="scale-note">no conectamos</div></div></div>
 </article>
 </section>
 <section aria-labelledby="ranking-title">
 <div class="section-head">
 <div>
-<div class="eyebrow">romantasy / fantasía</div>
+<div class="eyebrow">romance juvenil / new adult</div>
 <h2 id="ranking-title">lecturas recomendadas</h2>
 <p class="section-desc">Solo ponemos aquí lo que recomendaríamos a una amiga sin dudarlo.</p>
 </div>
 </div>
-<div class="books">
-<article class="book-card" data-score-band="4">
-<div class="book-top">
-<span class="rank">1</span>
-<div aria-label="Nota 4,5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star half"></span></span><span>4,5/5</span></div>
-</div>
-<h3 class="book-title">Alas de sangre</h3>
-<p class="book-author">Rebecca Yarros</p>
-<p class="review">Dragones, academia y mucha tensión. Me lo leí en un día, entiendo totalmente el hype.</p>
-<div class="chips"><span class="chip">🐉 dragones</span><span class="chip">🏰 academia</span><span class="chip">🔥 tensión alta</span></div>
-</article>
-<article class="book-card" data-score-band="4">
-<div class="book-top">
-<span class="rank">2</span>
-<div aria-label="Nota 4,5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star half"></span></span><span>4,5/5</span></div>
-</div>
-<h3 class="book-title">Alas de hierro</h3>
-<p class="book-author">Rebecca Yarros</p>
-<p class="review">Más denso que el primero, pero sigue teniendo momentazos.</p>
-<div class="chips"><span class="chip">📖 continuación</span><span class="chip">⚡ momentazos</span><span class="chip">🐉 Empíreo</span></div>
-</article>
-<article class="book-card" data-score-band="4">
-<div class="book-top">
-<span class="rank">3</span>
-<div aria-label="Nota 4 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div>
-</div>
-<h3 class="book-title">La sangre de Hércules</h3>
-<p class="book-author">Jasmine Mas</p>
-<p class="review">Mitología, dark romance y pruebas. Bastante adictivo.</p>
-<div class="chips"><span class="chip">🏛️ mitología</span><span class="chip">🖤 dark romance</span><span class="chip">🧩 pruebas</span></div>
-</article>
-<article class="book-card" data-score-band="4">
-<div class="book-top">
-<span class="rank">4</span>
-<div aria-label="Nota 4 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div>
-</div>
-<h3 class="book-title">El caballero y la polilla</h3>
-<p class="book-author">Rachel Gillig</p>
-<p class="review">Fantasía oscura, misterio y un slow burn que funciona muy bien.</p>
-<div class="chips"><span class="chip">🕯️ misterio</span><span class="chip">🌙 fantasía oscura</span><span class="chip">🫧 slow burn</span></div>
-</article>
-<article class="book-card" data-score-band="4">
-<div class="book-top">
-<span class="rank">5</span>
-<div aria-label="Nota 4 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div>
-</div>
-<h3 class="book-title">Sangre de dragón</h3>
-<p class="book-author">Briar Boleyn</p>
-<p class="review">Academia, dragones y romance. Muy para fans de romantasy juvenil.</p>
-<div class="chips"><span class="chip">🏫 academia</span><span class="chip">🐉 dragones</span><span class="chip">💗 juvenil</span></div>
-</article>
-<article class="book-card" data-score-band="4">
-<div class="book-top">
-<span class="rank">6</span>
-<div aria-label="Nota 4 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div>
-</div>
-<h3 class="book-title">Feral</h3>
-<p class="book-author">Nira Strauss</p>
-<p class="review">Paranormal romance con cambiaformas y tensión desde el principio.</p>
-<div class="chips"><span class="chip">🌕 paranormal</span><span class="chip">🐺 cambiaformas</span><span class="chip">🔥 inicio potente</span></div>
-</article>
-<article class="book-card" data-score-band="4">
-<div class="book-top">
-<span class="rank">7</span>
-<div aria-label="Nota 4 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div>
-</div>
-<h3 class="book-title">Alas de ónix</h3>
-<p class="book-author">Rebecca Yarros</p>
-<p class="review">No es mi favorito de la saga, pero sigo muy metida en la historia.</p>
-<div class="chips"><span class="chip">📚 saga</span><span class="chip">🐉 dragones</span><span class="chip">🧲 engancha</span></div>
-</article>
-<article class="book-card" data-score-band="4">
-<div class="book-top">
-<span class="rank">8</span>
-<div aria-label="Nota 4 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div>
-</div>
-<h3 class="book-title">Los cinco besos de la luna</h3>
-<p class="book-author">Miriam Mosquera</p>
-<p class="review">Romantasy juvenil más suave, bonita y fácil de leer.</p>
-<div class="chips"><span class="chip">🌙 lunar</span><span class="chip">🌸 suave</span><span class="chip">📘 lectura fácil</span></div>
-</article>
-<article class="book-card" data-score-band="4">
-<div class="book-top">
-<span class="rank">9</span>
-<div aria-label="Nota 4 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div>
-</div>
-<h3 class="book-title">El pájaro y el corazón de piedra</h3>
-<p class="book-author">Carissa Broadbent</p>
-<p class="review">Más oscuro, más adulto y con un romance bastante cuidado.</p>
-<div class="chips"><span class="chip">🪶 oscuro</span><span class="chip">🍷 adulto</span><span class="chip">💌 romance cuidado</span></div>
-</article>
-<article class="book-card" data-score-band="3">
-<div class="book-top">
-<span class="rank">10</span>
-<div aria-label="Nota 3,5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star half"></span><span class="star empty"></span></span><span>3,5/5</span></div>
-</div>
-<h3 class="book-title">Casa de tierra y sangre</h3>
-<p class="book-author">Sarah J. Maas</p>
-<p class="review">Cuesta entrar al principio, pero el worldbuilding merece la pena.</p>
-<div class="chips"><span class="chip">🌆 mundo amplio</span><span class="chip">🕰️ arranque lento</span><span class="chip">✨ compensa</span></div>
-</article>
-</div>
+<div class="books"><article class="book-card" data-score-band="4"><div class="book-top"><span class="rank">1</span><div aria-label="Nota 4,5/5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star half"></span></span><span>4,5/5</span></div></div><h3 class="book-title">Binding 13</h3><p class="book-author">Chloe Walsh</p><p class="review">Sports romance, drama y personajes a los que acabas cogiendo mucho cariño.</p><div class="chips"><span class="chip">🏉 sports romance</span><span class="chip">💔 drama</span><span class="chip">🤍 cariño real</span></div></article><article class="book-card" data-score-band="4"><div class="book-top"><span class="rank">2</span><div aria-label="Nota 4,5/5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star half"></span></span><span>4,5/5</span></div></div><h3 class="book-title">Keeping 13</h3><p class="book-author">Chloe Walsh</p><p class="review">Más emocional que el primero.</p><div class="chips"><span class="chip">💌 emocional</span><span class="chip">📖 continuación</span><span class="chip">🫶 personajes</span></div></article><article class="book-card" data-score-band="4"><div class="book-top"><span class="rank">3</span><div aria-label="Nota 4,5/5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star half"></span></span><span>4,5/5</span></div></div><h3 class="book-title">Un amigo gratis</h3><p class="book-author">Inma Rubiales</p><p class="review">Juvenil cercano, bonito y con una historia muy fácil de sentir.</p><div class="chips"><span class="chip">🌸 juvenil</span><span class="chip">🤍 cercano</span><span class="chip">💬 fácil de sentir</span></div></article><article class="book-card" data-score-band="4"><div class="book-top"><span class="rank">4</span><div aria-label="Nota 4/5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div></div><h3 class="book-title">Culpa vuestra</h3><p class="book-author">Mercedes Ron</p><p class="review">Drama juvenil, tensión y mucho salseo. Se lee muy rápido.</p><div class="chips"><span class="chip">🔥 tensión</span><span class="chip">🍿 salseo</span><span class="chip">⚡ rápido</span></div></article><article class="book-card" data-score-band="4"><div class="book-top"><span class="rank">5</span><div aria-label="Nota 4/5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div></div><h3 class="book-title">Kiss Me. Prohibido enamorarse</h3><p class="book-author">Elle Kennedy</p><p class="review">Hockey romance, universidad y química desde el principio.</p><div class="chips"><span class="chip">🏒 hockey romance</span><span class="chip">🎓 universidad</span><span class="chip">🧲 química</span></div></article><article class="book-card" data-score-band="4"><div class="book-top"><span class="rank">6</span><div aria-label="Nota 4/5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div></div><h3 class="book-title">Si fuéramos eternos</h3><p class="book-author">Emma Gil</p><p class="review">Romance juvenil con ese punto emocional que se queda.</p><div class="chips"><span class="chip">💌 romance juvenil</span><span class="chip">🫧 emocional</span><span class="chip">🌙 se queda</span></div></article><article class="book-card" data-score-band="4"><div class="book-top"><span class="rank">7</span><div aria-label="Nota 4/5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div></div><h3 class="book-title">Maldita fortuna</h3><p class="book-author">Myriam M. Lejardi</p><p class="review">Romance, misterio y una trama algo distinta, que se agradece.</p><div class="chips"><span class="chip">🔎 misterio</span><span class="chip">💘 romance</span><span class="chip">✨ distinta</span></div></article><article class="book-card" data-score-band="4"><div class="book-top"><span class="rank">8</span><div aria-label="Nota 4/5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star empty"></span></span><span>4/5</span></div></div><h3 class="book-title">Ganar al límite</h3><p class="book-author">Elsie Silver</p><p class="review">Small town romance, tensión y personajes con mucha química.</p><div class="chips"><span class="chip">🏡 small town</span><span class="chip">🔥 tensión</span><span class="chip">🧲 química</span></div></article><article class="book-card" data-score-band="3"><div class="book-top"><span class="rank">9</span><div aria-label="Nota 3,5/5 de 5" class="rating"><span aria-hidden="true" class="rating-icons stars"><span class="star full"></span><span class="star full"></span><span class="star full"></span><span class="star half"></span><span class="star empty"></span></span><span>3,5/5</span></div></div><h3 class="book-title">Giulia, el amor y un puñado de lavanda</h3><p class="book-author">Cherry Chic</p><p class="review">Pueblo, verano y reencuentros. Muy fácil de leer.</p><div class="chips"><span class="chip">🌿 lavanda</span><span class="chip">☀️ verano</span><span class="chip">🏡 pueblo</span></div></article></div>
 </section>
 <footer class="footer">
 <strong><a href="https://www.instagram.com/literalclub_?igsh=MTBmZHA0MzE4ZGZobA%3D%3D&utm_source=qr">literalclub_</a></strong>
-<span>romantasy, fantasía y opiniones sin anestesia literaria</span>
+<span>romance juvenil, new adult y drama emocional con criterio lector</span>
 </footer>
 </main>
 <script>
