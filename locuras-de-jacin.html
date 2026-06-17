@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>LiteralClub · Estrategia, calendario, preguntas y setup</title>
+<meta content="Estrategia, calendario, preguntas y setup del club de lectura de LiteralClub." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&amp;family=Instrument+Sans:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --paper:#F7ECE5;
+  --paper-2:#EED8CE;
+  --cream:#FFF8F3;
+  --cream-2:#F8EDE7;
+  --white:#FFFFFF;
+  --blush:#E5C8B8;
+  --rose:#BA9898;
+  --mauve:#715C66;
+  --mauve-2:#5C4857;
+  --plum:#372F38;
+  --plum-2:#28222B;
+  --ink:#261E27;
+  --muted:rgba(38,30,39,.68);
+  --soft:rgba(38,30,39,.48);
+  --line:rgba(55,47,56,.13);
+  --line-strong:rgba(55,47,56,.24);
+  --shadow:0 22px 62px rgba(55,47,56,.14);
+  --shadow-soft:0 12px 30px rgba(55,47,56,.075);
+  --radius-xl:32px;
+  --radius-lg:24px;
+  --radius-md:18px;
+  --radius-sm:13px;
+  --font-sans:'Instrument Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-serif:'Fraunces',Georgia,serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{
+  min-height:100vh;
+  font-family:var(--font-sans);
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.55;
+  background:
+    radial-gradient(circle at 8% -5%, rgba(255,248,243,.96), transparent 34%),
+    radial-gradient(circle at 92% 2%, rgba(229,200,184,.52), transparent 32%),
+    radial-gradient(circle at 4% 92%, rgba(186,152,152,.22), transparent 34%),
+    linear-gradient(135deg,#F7ECE5 0%,#EFD9D0 48%,#D8B6B0 100%);
+  text-rendering:geometricPrecision;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 30px));margin:0 auto;padding:22px 0 56px}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius-xl);
+  border:1px solid rgba(255,255,255,.54);
+  background:linear-gradient(135deg,var(--plum) 0%,var(--mauve-2) 48%,var(--rose) 100%);
+  color:var(--cream);
+  box-shadow:var(--shadow);
+  isolation:isolate;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(255,248,243,.20);
+  border-radius:24px;
+  pointer-events:none;
+  z-index:0;
+}
+.hero:after{
+  content:"☾";
+  position:absolute;
+  right:clamp(8px,4vw,48px);
+  top:-48px;
+  font-family:var(--font-serif);
+  font-size:clamp(112px,17vw,205px);
+  line-height:1;
+  color:rgba(255,248,243,.14);
+  transform:rotate(-10deg);
+  z-index:0;
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);
+  gap:clamp(22px,4vw,54px);
+  align-items:end;
+  padding:clamp(24px,5vw,56px);
+}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:clamp(22px,4vw,40px)}
+.brand{display:flex;align-items:center;gap:13px;min-width:0}
+.logo-circle{
+  width:60px;height:60px;flex:0 0 60px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,248,243,.96);color:var(--plum);
+  border:1px solid rgba(255,255,255,.62);
+  font-family:'Playfair Display',Georgia,serif;font-size:23px;font-weight:700;letter-spacing:-2px;
+  box-shadow:0 16px 30px rgba(38,30,39,.18)
+}
+.handle{font-size:12px;font-weight:900;text-transform:lowercase;letter-spacing:.16em;color:var(--cream)}
+.microcopy{margin-top:2px;font-size:12px;color:rgba(255,248,243,.76)}
+.hero-pill{
+  width:fit-content;margin-bottom:13px;padding:8px 13px;border:1px solid rgba(255,248,243,.25);border-radius:999px;
+  background:rgba(255,248,243,.12);font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);
+  backdrop-filter:blur(10px)
+}
+h1{max-width:760px;margin:0;font-family:var(--font-serif);font-size:clamp(42px,7vw,84px);font-weight:800;line-height:.9;letter-spacing:-.045em;color:var(--cream)}
+h1 em{font-style:italic;font-weight:600;color:#F6D7CD}
+.hero-sub{max-width:680px;margin:18px 0 0;color:rgba(255,248,243,.82);font-size:clamp(15px,1.8vw,18px);line-height:1.52}
+.hero-overview{align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;min-height:260px;padding:8px 0 4px;border-left:1px solid rgba(255,248,243,.20)}
+.overview-label{margin:0 0 14px 22px;font-size:10px;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:rgba(255,248,243,.64)}
+.hero-overview ol{list-style:none;display:grid;gap:15px;margin:0;padding:0 0 0 22px}
+.hero-overview li{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;color:var(--cream)}
+.hero-overview .num{font-family:var(--font-serif);font-size:28px;line-height:.85;font-weight:800;color:#F6D7CD;letter-spacing:-.04em}
+.hero-overview strong{display:block;font-size:13px;line-height:1.1;text-transform:uppercase;letter-spacing:.12em;color:var(--cream)}
+.hero-overview em{display:block;margin-top:5px;font-style:normal;font-size:12px;line-height:1.34;color:rgba(255,248,243,.70)}
+
+.section-nav{
+  position:sticky;top:10px;z-index:20;margin:14px 0 20px;padding:8px;border:1px solid var(--line);border-radius:22px;
+  background:rgba(255,248,243,.92);box-shadow:0 12px 28px rgba(55,47,56,.08);backdrop-filter:blur(16px)
+}
+.nav-track{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.nav-link{display:flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:8px 10px;border-radius:16px;color:var(--mauve-2);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.105em;transition:background .18s ease,color .18s ease,transform .18s ease}
+.nav-link span{font-family:var(--font-serif);font-size:16px;letter-spacing:-.03em;color:var(--rose)}
+.nav-link:hover{background:var(--cream-2);color:var(--plum);transform:translateY(-1px)}
+.nav-link.active{background:linear-gradient(135deg,var(--plum),var(--mauve-2));color:var(--cream);box-shadow:0 10px 20px rgba(55,47,56,.16)}
+.nav-link.active span{color:#F6D7CD}
+
+.content-section{
+  position:relative;margin:22px 0 0;padding:clamp(22px,3.4vw,38px);border:1px solid var(--line);border-radius:30px;background:rgba(255,248,243,.92);box-shadow:var(--shadow-soft);scroll-margin-top:96px;
+}
+.content-section:before{content:"";position:absolute;left:clamp(22px,3.4vw,38px);right:clamp(22px,3.4vw,38px);top:0;height:4px;border-radius:0 0 999px 999px;background:linear-gradient(90deg,var(--plum),var(--mauve),var(--rose))}
+.section-heading{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;margin-bottom:24px}
+.eyebrow{font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--mauve-2);margin-bottom:8px}
+.sec-title{font-family:var(--font-serif);font-size:clamp(31px,4.6vw,52px);font-weight:780;line-height:.98;letter-spacing:-.045em;color:var(--plum);margin-bottom:10px}
+.sec-sub{max-width:820px;font-size:15px;color:var(--muted);line-height:1.58}
+.section-number{font-family:var(--font-serif);font-size:clamp(48px,8vw,88px);line-height:.78;font-weight:800;color:rgba(55,47,56,.10);letter-spacing:-.06em;user-select:none}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line-strong),transparent);margin:26px 0}
+
+.highlight,.card,.rol-card,.setup-item,.question-group,.q-item,.copy-block{
+  border:1px solid var(--line);background:var(--white);box-shadow:0 10px 24px rgba(55,47,56,.045)
+}
+.highlight{position:relative;border-radius:22px;padding:16px 18px 16px 22px;margin-bottom:13px;overflow:hidden;background:linear-gradient(180deg,#FFFFFF 0%,#FFF8F3 100%)}
+.highlight:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--plum),var(--rose))}
+.highlight p{font-size:14px;color:var(--muted);line-height:1.58}
+.highlight strong{color:var(--ink);font-weight:850}
+.highlight.teal:before,.highlight.amber:before,.highlight.red:before{background:linear-gradient(180deg,var(--plum),var(--rose))}
+.highlight em{font-style:normal;font-weight:850;color:var(--plum)}
+.card{border-radius:23px;padding:18px 20px;margin-bottom:12px;background:linear-gradient(180deg,#FFFFFF 0%,#FFF8F3 100%)}
+.card-title{font-family:var(--font-serif);font-size:23px;font-weight:760;line-height:1.05;letter-spacing:-.03em;color:var(--plum);margin-bottom:8px}
+.card-body{font-size:14px;color:var(--muted);line-height:1.62}
+
+.rol-grid{display:grid;grid-template-columns:1fr;gap:10px;margin:12px 0 18px}
+.rol-card{display:grid;grid-template-columns:42px minmax(155px,225px) 1fr;align-items:center;gap:13px;padding:13px 16px;border-radius:20px;background:var(--cream-2)}
+.rol-icon{width:38px;height:38px;display:grid;place-items:center;margin:0;border-radius:14px;background:var(--cream);border:1px solid var(--line);font-size:20px;box-shadow:0 10px 20px rgba(55,47,56,.07)}
+.rol-name{margin:0;font-family:var(--font-serif);font-size:21px;line-height:1;font-weight:760;color:var(--plum);white-space:nowrap;letter-spacing:-.03em}
+.rol-desc{font-size:13px;line-height:1.42;color:var(--muted)}
+
+.paso-row{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:start}
+.paso-row:last-child{border-bottom:none}
+.paso-t{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--mauve-2);padding-top:3px}
+.paso-c{font-size:14px;color:var(--muted);line-height:1.52}
+.paso-c strong{display:inline;color:var(--ink);font-weight:850}
+
+.calendar-panel{position:relative;overflow:hidden;border:1px solid rgba(55,47,56,.16);border-radius:26px;padding:24px;background:linear-gradient(135deg,var(--plum) 0%,var(--mauve-2) 54%,var(--rose) 100%);box-shadow:0 18px 46px rgba(55,47,56,.17);color:var(--cream)}
+.calendar-panel:before{content:"";position:absolute;right:-46px;top:-54px;width:190px;height:190px;border-radius:50%;background:rgba(255,248,243,.12);pointer-events:none}
+.calendar-panel .eyebrow{color:rgba(255,248,243,.72)}
+.calendar-title{font-family:var(--font-serif);font-size:clamp(29px,4vw,46px);font-weight:780;line-height:.98;letter-spacing:-.045em;color:var(--cream);margin:0 0 10px}
+.calendar-panel .sec-sub{color:rgba(255,248,243,.78);max-width:760px}
+.calendar-list{position:relative;z-index:1;display:grid;gap:10px;margin-top:18px}
+.calendar-item{display:grid;grid-template-columns:52px 1fr;gap:13px;align-items:start;border:1px solid rgba(255,248,243,.20);border-radius:20px;background:rgba(255,248,243,.10);padding:13px;backdrop-filter:blur(10px)}
+.calendar-mark{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:rgba(255,248,243,.94);color:var(--plum);font-family:var(--font-serif);font-size:20px;font-weight:800;letter-spacing:-.03em;box-shadow:0 10px 24px rgba(38,30,39,.12)}
+.calendar-day{margin:0 0 5px;font-size:15px;font-weight:900;color:var(--cream);line-height:1.25}
+.calendar-copy{margin:0;color:rgba(255,248,243,.78);font-size:13.3px;line-height:1.46}
+.calendar-copy strong{color:var(--cream);font-weight:900}
+.calendar-meta{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;background:rgba(255,248,243,.14);color:var(--cream);font-size:11px;font-weight:850;line-height:1}
+.calendar-note{position:relative;z-index:1;margin-top:14px;border:1px solid rgba(255,248,243,.20);border-radius:20px;background:rgba(255,248,243,.92);padding:15px 16px;color:rgba(38,30,39,.75);font-size:13.4px;line-height:1.5}
+.calendar-note strong{display:block;margin-bottom:3px;color:var(--plum);font-weight:950;text-transform:uppercase;letter-spacing:.12em;font-size:10px}
+
+.question-intro{display:grid;gap:8px;margin:0 0 18px;padding:16px 18px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,#FFFFFF 0%,#FFF8F3 100%);box-shadow:0 10px 24px rgba(55,47,56,.045)}
+.question-intro p{max-width:900px;font-size:14px;line-height:1.55;color:var(--muted)}
+.question-index{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 18px;padding:10px 12px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.58);box-shadow:0 10px 22px rgba(55,47,56,.04)}
+.question-index-label{margin-right:4px;color:var(--soft);font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.question-index a{display:inline-flex;align-items:center;padding:6px 0;color:var(--mauve-2);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.10em;border-bottom:2px solid transparent;transition:color .18s ease,border-color .18s ease,transform .18s ease}
+.question-index a:not(:last-child):after{content:"/";margin-left:8px;color:rgba(55,47,56,.22)}
+.question-index a:hover{color:var(--plum);border-color:var(--rose);transform:translateY(-1px)}
+.question-group{border-radius:26px;padding:0;margin:18px 0 0;background:transparent;border:0;box-shadow:none;scroll-margin-top:100px}
+.question-group:target .group-head{box-shadow:0 14px 36px rgba(55,47,56,.18)}
+.group-head{display:grid;grid-template-columns:1fr auto;gap:12px;margin-bottom:12px;padding:18px 20px;border-radius:24px;border:1px solid rgba(255,248,243,.24);background:linear-gradient(135deg,var(--plum) 0%,var(--mauve-2) 72%,var(--rose) 100%);color:var(--cream);box-shadow:0 14px 32px rgba(55,47,56,.14)}
+.group-kicker{display:inline-flex;margin-bottom:7px;padding:5px 9px;border-radius:999px;background:rgba(255,248,243,.13);color:#F6D7CD;font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.group-head h3{font-family:var(--font-serif);font-size:clamp(26px,3vw,35px);line-height:1;font-weight:760;letter-spacing:-.04em;color:var(--cream)}
+.group-head p{margin-top:7px;color:rgba(255,248,243,.78);font-size:13px;line-height:1.42}
+.group-count{font-family:var(--font-serif);font-size:40px;line-height:1;font-weight:800;color:rgba(255,248,243,.20);letter-spacing:-.05em}
+.q-item{position:relative;border-radius:18px;padding:14px 15px 14px 18px;margin-bottom:9px;background:var(--white);overflow:hidden}
+.q-item:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--plum),var(--rose))}
+.q-item:last-child{margin-bottom:0}
+.q-text{font-size:14.5px;font-weight:780;color:var(--ink);line-height:1.38;margin-bottom:5px}
+.q-why{font-size:12.2px;color:var(--muted);line-height:1.38}
+.q-why em{font-style:normal;font-weight:850;color:var(--mauve-2)}
+.q-examples-title{display:block;margin-top:9px;font-size:9.5px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve-2)}
+.q-examples{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;padding:0;border:0}
+.q-examples li{position:relative;padding:5px 8px;border:1px solid rgba(55,47,56,.10);border-radius:999px;background:var(--cream-2);font-size:11.8px;line-height:1.25;color:var(--muted)}
+.q-examples li:before{display:none!important}
+
+.setup-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}
+.setup-item{position:relative;border-radius:20px;padding:17px 16px 16px;min-height:112px;overflow:hidden;background:linear-gradient(180deg,#FFFFFF 0%,#FFF8F3 100%)}
+.setup-item:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--plum),var(--rose))}
+.setup-k{font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.14em;color:var(--mauve-2);margin-bottom:7px}
+.setup-v{font-size:13.6px;color:var(--muted);line-height:1.48}
+.copy-block{border-radius:22px;padding:18px;margin-bottom:12px;font-size:14px;color:var(--muted);line-height:1.75;white-space:pre-line;background:var(--white)}
+.copy-block strong{display:block;margin-bottom:8px;color:var(--plum);font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}
+.footer{margin-top:30px;text-align:center;color:rgba(38,30,39,.62);font-size:13px}
+.footer strong{display:block;margin-bottom:4px;font-family:var(--font-serif);font-size:25px;letter-spacing:-.03em;color:var(--plum)}
+
+
+
+/* UX plegable: menos scroll, más consulta rápida */
+.nav-link{
+  border:0;
+  background:transparent;
+  font-family:inherit;
+  cursor:pointer;
+}
+.section-hint{
+  margin:-8px 0 14px;
+  padding:10px 14px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(255,248,243,.70);
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.38;
+  text-align:center;
+  box-shadow:0 10px 22px rgba(55,47,56,.045);
+}
+.content-section[hidden],
+.question-group[hidden],
+.question-intro[hidden],
+.question-empty[hidden]{
+  display:none!important;
+}
+.content-section.is-open{
+  animation:revealBlock .22s ease both;
+}
+@keyframes revealBlock{
+  from{opacity:.35;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.intro-static{
+  display:grid;
+  gap:8px;
+  margin:0 0 14px;
+  padding:15px 16px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FFF8F3 100%);
+  color:var(--muted);
+  box-shadow:0 10px 22px rgba(55,47,56,.045);
+}
+.intro-static span{
+  display:inline-flex;
+  width:max-content;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--cream-2);
+  color:var(--mauve-2);
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.intro-static p{
+  margin:0;
+  max-width:900px;
+  font-size:14px;
+  line-height:1.5;
+  color:var(--muted);
+}
+
+.intro-toggle{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:12px;
+  margin:0 0 10px;
+  padding:13px 15px;
+  border:1px solid var(--line);
+  border-radius:19px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FFF8F3 100%);
+  color:var(--plum);
+  font-family:inherit;
+  text-align:left;
+  cursor:pointer;
+  box-shadow:0 10px 22px rgba(55,47,56,.045);
+}
+.intro-toggle span{
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--mauve-2);
+}
+.intro-toggle strong{
+  justify-self:end;
+  padding:7px 10px;
+  border-radius:999px;
+  background:var(--cream-2);
+  color:var(--mauve-2);
+  font-size:11px;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.intro-toggle.active{
+  border-color:rgba(55,47,56,.23);
+  background:linear-gradient(135deg,var(--plum) 0%,var(--mauve-2) 100%);
+}
+.intro-toggle.active span,
+.intro-toggle.active strong{color:var(--cream)}
+.intro-toggle.active strong{background:rgba(255,248,243,.14)}
+.question-filter{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 11px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--cream);
+  color:var(--mauve-2);
+  font-family:inherit;
+  font-size:11px;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  cursor:pointer;
+  transition:background .18s ease,color .18s ease,transform .18s ease,border-color .18s ease;
+}
+.question-filter:hover{transform:translateY(-1px);border-color:var(--line-strong)}
+.question-filter.active{
+  background:linear-gradient(135deg,var(--plum),var(--mauve-2));
+  color:var(--cream);
+  border-color:transparent;
+  box-shadow:0 10px 20px rgba(55,47,56,.14);
+}
+.question-empty{
+  margin:-7px 0 14px;
+  padding:13px 15px;
+  border:1px dashed rgba(55,47,56,.22);
+  border-radius:18px;
+  background:rgba(255,248,243,.58);
+  color:var(--muted);
+  font-size:12.6px;
+  line-height:1.4;
+  text-align:center;
+}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:920px){
+  .hero-inner{grid-template-columns:1fr;gap:20px}
+  .hero-overview{min-height:auto;border-left:none;border-top:1px solid rgba(255,248,243,.20);padding-top:16px}
+  .overview-label{margin-left:0}
+  .hero-overview ol{padding-left:0;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+  .hero-overview li{grid-template-columns:1fr;gap:7px}
+  .setup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .content-section{border-radius:25px}
+  .rol-card{grid-template-columns:42px minmax(140px,200px) 1fr}
+}
+@media (max-width:680px){
+  body{font-size:13px;line-height:1.45;background:linear-gradient(145deg,#F7ECE5 0%,#EED8CE 55%,#D9B9B2 100%)}
+  .wrap{width:min(100% - 14px,1120px);padding-top:7px;padding-bottom:34px}
+  .hero{border-radius:22px}
+  .hero:before{display:none}
+  .hero:after{font-size:74px;top:-14px;right:3px;opacity:.72}
+  .hero-inner{padding:14px;gap:13px}
+  .brand-row{margin-bottom:12px}
+  .logo-circle{width:38px;height:38px;flex-basis:38px;font-size:16px;box-shadow:0 8px 18px rgba(38,30,39,.14)}
+  .brand{gap:9px}
+  .handle{font-size:9.5px;letter-spacing:.12em}
+  .microcopy{font-size:9.5px;line-height:1.15}
+  .hero-pill{margin-bottom:8px;font-size:7.8px;letter-spacing:.13em;padding:5px 8px}
+  h1{font-size:clamp(30px,10.4vw,42px);line-height:.92;letter-spacing:-.036em}
+  .hero-sub{margin-top:9px;font-size:11.8px;line-height:1.32}
+  .hero-overview{padding-top:12px}
+  .overview-label{margin-bottom:8px;font-size:8px;letter-spacing:.16em}
+  .hero-overview ol{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+  .hero-overview li{display:block;padding:8px 7px;border:1px solid rgba(255,248,243,.18);border-radius:14px;background:rgba(255,248,243,.09)}
+  .hero-overview .num{display:block;margin-bottom:5px;font-size:18px}
+  .hero-overview strong{font-size:8.6px;letter-spacing:.07em;line-height:1.05}
+  .hero-overview em{display:none}
+
+  .section-nav{top:5px;margin:8px 0 10px;padding:5px;border-radius:17px}
+  .nav-track{gap:4px}
+  .nav-link{gap:3px;min-height:34px;padding:6px 2px;border-radius:13px;font-size:7.4px;letter-spacing:.025em}
+  .nav-link span{font-size:11px}
+
+  .section-hint{margin:-4px 0 8px;padding:8px 10px;border-radius:14px;font-size:10.3px;line-height:1.28}
+  .intro-toggle{grid-template-columns:1fr;gap:6px;margin-bottom:7px;padding:10px;border-radius:14px}
+  .intro-toggle span{font-size:7.8px;letter-spacing:.10em}
+  .intro-toggle strong{justify-self:start;font-size:8.2px;padding:5px 7px;letter-spacing:.05em}
+  .intro-static{padding:11px 10px;border-radius:15px;margin-bottom:10px;gap:6px}
+  .intro-static span{font-size:7.8px;letter-spacing:.10em;padding:5px 7px}
+  .intro-static p{font-size:10.4px;line-height:1.32}
+  .question-filter{font-size:7.8px;letter-spacing:.035em;padding:6px 4px;line-height:1;border-radius:999px}
+  .question-empty{margin:-4px 0 10px;padding:9px 10px;border-radius:14px;font-size:10.2px;line-height:1.26}
+
+  .content-section{margin-top:10px;padding:14px 10px;border-radius:19px;scroll-margin-top:58px}
+  .content-section:before{left:10px;right:10px;height:3px}
+  .section-heading{grid-template-columns:1fr;gap:0;margin-bottom:13px}
+  .section-number{display:none}
+  .eyebrow{font-size:7.8px;letter-spacing:.14em;margin-bottom:5px}
+  .sec-title{font-size:clamp(24px,8vw,31px);line-height:.96;margin-bottom:7px}
+  .sec-sub{font-size:11.7px;line-height:1.36}
+  .divider{margin:16px 0}
+  .highlight{padding:11px 11px 11px 14px;border-radius:15px;margin-bottom:8px}
+  .highlight:before{width:4px}
+  .highlight p,.card-body,.paso-c{font-size:11.5px;line-height:1.38}
+  .card{border-radius:15px;padding:12px;margin-bottom:8px}
+  .card-title{font-size:18px;margin-bottom:5px}
+
+  .rol-grid{gap:7px;margin:8px 0 12px}
+  .rol-card{grid-template-columns:30px 1fr;gap:5px 9px;padding:9px;border-radius:14px;align-items:start}
+  .rol-icon{width:28px;height:28px;border-radius:10px;font-size:15px;grid-row:1 / span 2}
+  .rol-name{font-size:16px;line-height:1.02;white-space:normal;padding-top:1px}
+  .rol-desc{grid-column:2;font-size:10.9px;line-height:1.28}
+
+  .paso-row{grid-template-columns:52px 1fr;gap:8px;padding:8px 0}
+  .paso-t{font-size:8.6px;letter-spacing:.06em}
+
+  .calendar-panel{border-radius:18px;padding:13px}
+  .calendar-panel:before{width:110px;height:110px;right:-34px;top:-34px}
+  .calendar-title{font-size:25px;line-height:.96;margin-bottom:7px}
+  .calendar-list{gap:7px;margin-top:11px}
+  .calendar-item{grid-template-columns:34px 1fr;gap:8px;padding:9px;border-radius:14px}
+  .calendar-mark{width:29px;height:29px;border-radius:10px;font-size:14px}
+  .calendar-day{font-size:11.4px;line-height:1.2;margin-bottom:3px}
+  .calendar-copy{font-size:10.8px;line-height:1.31}
+  .calendar-meta{font-size:8.7px;padding:4px 7px;margin-top:6px}
+  .calendar-note{margin-top:9px;border-radius:14px;padding:10px;font-size:10.9px;line-height:1.34}
+  .calendar-note strong{font-size:8px;letter-spacing:.10em}
+
+  .question-intro{padding:11px;border-radius:16px;margin-bottom:10px;gap:6px}
+  .question-intro p{font-size:11.2px;line-height:1.34}
+  .question-index{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;border-radius:15px;margin-bottom:10px}
+  .question-index-label{grid-column:1/-1;font-size:7.6px;letter-spacing:.12em;margin:0 0 1px}
+  .question-index a{justify-content:center;border:1px solid var(--line);border-radius:999px;padding:5px 4px;background:var(--cream);font-size:7.8px;letter-spacing:.035em;line-height:1}
+  .question-index a:not(:last-child):after{display:none}
+
+  .question-group{margin-top:12px;scroll-margin-top:70px}
+  .group-head{grid-template-columns:1fr;margin-bottom:7px;padding:11px;border-radius:15px}
+  .group-count{display:none}
+  .group-kicker{font-size:7.5px;letter-spacing:.13em;padding:4px 7px;margin-bottom:5px}
+  .group-head h3{font-size:22px;line-height:.98}
+  .group-head p{font-size:10.7px;line-height:1.26;margin-top:5px}
+  .q-item{border-radius:14px;padding:10px 10px 9px 13px;margin-bottom:6px}
+  .q-item:before{width:3px}
+  .q-text{font-size:11.9px;line-height:1.27;margin-bottom:3px}
+  .q-why{font-size:9.8px;line-height:1.25}
+  .q-examples-title{margin-top:7px;font-size:7.5px;letter-spacing:.11em}
+  .q-examples{flex-wrap:nowrap;gap:5px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding-bottom:1px;scrollbar-width:none}
+  .q-examples::-webkit-scrollbar{display:none}
+  .q-examples li{flex:0 0 auto;max-width:78vw;scroll-snap-align:start;font-size:9.6px;line-height:1.18;padding:5px 7px;white-space:normal}
+
+  .setup-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-bottom:10px}
+  .setup-item{min-height:94px;border-radius:14px;padding:11px 9px 10px}
+  .setup-item:before{height:2px}
+  .setup-k{font-size:7.8px;letter-spacing:.10em;margin-bottom:5px}
+  .setup-v{font-size:10.3px;line-height:1.28}
+  .copy-block{border-radius:15px;padding:12px;font-size:11.5px;line-height:1.45}
+  .footer{margin-top:20px;font-size:10.8px}
+  .footer strong{font-size:20px}
+}
+@media (max-width:380px){
+  .wrap{width:min(100% - 10px,1120px)}
+  .hero-inner{padding:12px}
+  h1{font-size:clamp(28px,10vw,38px)}
+  .hero-sub{font-size:11px}
+  .nav-link{font-size:6.9px}
+  .sec-title{font-size:24px}
+  .question-index a{font-size:7.3px;padding:5px 2px}
+  .q-text{font-size:11.4px}
+  .q-why{font-size:9.4px}
+  .q-examples li{font-size:9.1px}
+  .setup-v{font-size:9.8px}
+}
+
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero" id="inicio">
+<div class="hero-inner">
+<div class="hero-copy">
+<div class="brand-row">
+<a aria-label="LiteralClub en Instagram" class="brand" href="https://www.instagram.com/literalclub_?igsh=MTBmZHA0MzE4ZGZobA%3D%3D&amp;utm_source=qr">
+<div class="logo-circle">lc</div>
+<div>
+<div class="handle">@literalclub_</div>
+<div class="microcopy">dos amigas · muchos libros · cero filtros</div>
+</div>
+</a>
+</div>
+<div class="hero-pill">club de lectura · propuesta limpia</div>
+<h1>estrategia, <br/><em>calendario y guion</em></h1>
+<p class="hero-sub">Solo lo importante para arrancar el club: la idea, el calendario de publicación, el guion de preguntas y el montaje. Todo ordenado para consultarlo rápido durante la preparación.</p>
+</div>
+<aside aria-label="Resumen de la guía" class="hero-overview">
+<p class="overview-label">En esta guía</p>
+<ol>
+<li><span class="num">01</span><div><strong>Estrategia</strong><em>Identidad, roles y criterio.</em></div></li>
+<li><span class="num">02</span><div><strong>Calendario</strong><em>De la grabación a la semana.</em></div></li>
+<li><span class="num">03</span><div><strong>Preguntas</strong><em>Guion para grabar sin perder el hilo.</em></div></li>
+<li><span class="num">04</span><div><strong>Setup</strong><em>Vídeo, sonido y edición.</em></div></li>
+</ol>
+</aside>
+</div>
+</header>
+<nav aria-label="Navegación principal" class="section-nav">
+<div class="nav-track"><button aria-expanded="true" class="nav-link active" data-target="estrategia" type="button"><span>01</span>Estrategia</button><button aria-expanded="false" class="nav-link" data-target="calendario" type="button"><span>02</span>Calendario</button><button aria-expanded="false" class="nav-link" data-target="preguntas" type="button"><span>03</span>Preguntas</button><button aria-expanded="false" class="nav-link" data-target="setup" type="button"><span>04</span>Setup</button></div>
+</nav>
+<section class="content-section is-open" data-section="estrategia" id="estrategia">
+<div class="section-heading"><div><div class="eyebrow">Por qué este formato y no otro</div>
+<h2 class="sec-title">La idea, sin rodeos</h2>
+<p class="sec-sub">Bookstagram en español está lleno de cuentas que enseñan libros bonitos. Casi ninguna te da tres opiniones reales sobre el mismo libro. Eso es lo que os hace distintas.</p></div><div aria-hidden="true" class="section-number">01</div></div>
+<div class="highlight">
+<p><strong>Vuestra frase, vuestra identidad:</strong> porque leer sola está bien, pero leer con amigas que te entienden es otra cosa. Todo lo que publiquéis del club sale de ahí. Si una pieza no encaja con esa frase, no es para el club.</p>
+</div>
+<div class="divider"></div>
+<div class="eyebrow">Quién es quién</div>
+<div class="sec-sub">La gente engancha con personas, no con cuentas. Cada una tiene que tener una voz que se reconozca a los dos segundos de aparecer.</div>
+<div aria-label="Voces del club" class="rol-grid">
+<div class="rol-card">
+<div aria-hidden="true" class="rol-icon">🖤</div>
+<div class="rol-name">La crítica</div>
+<div class="rol-desc">No se guarda nada. Si el libro falla, lo dice. Sus 3 estrellas valen más que las 5 de otra.</div>
+</div>
+<div class="rol-card">
+<div aria-hidden="true" class="rol-icon">🥺</div>
+<div class="rol-name">La que se lo cree todo</div>
+<div class="rol-desc">Se engancha emocionalmente. Llora, se enfada, se enamora de los personajes. Es el corazón del club.</div>
+</div>
+<div class="rol-card">
+<div aria-hidden="true" class="rol-icon">🤔</div>
+<div class="rol-name">La analítica</div>
+<div class="rol-desc">Siempre encuentra el "pero". Conecta el libro con otros que ha leído, detecta los clichés, pone en contexto. La voz del criterio.</div>
+</div>
+</div>
+<div class="highlight amber">
+<p>No hace falta que os repartáis los papeles como un guion. Saldrán solos. Lo único que importa antes de darle al rec: que <strong>no opinéis las tres igual.</strong> Si coincidís en todo no hay debate, y sin debate esto es una cuenta más enseñando portadas.</p>
+</div>
+<div class="divider"></div>
+<div class="eyebrow">Las dos reglas que sostienen todo</div>
+<div class="card">
+<div class="card-title">Quien elige el libro, manda</div>
+<div class="card-body">Cada semana le toca a una. Ella propone, lo defiende aunque se lo tiren por tierra y lleva el hilo de la grabación. La semana siguiente le toca a otra. Ese turno rotatorio es lo que hace que las tres tengáis peso de verdad y que el formato no se queme.</div>
+</div>
+<div class="card">
+<div class="card-title">Una tarde de grabación = una semana de contenido</div>
+<div class="card-body">Os juntáis, grabáis una hora de conversación de verdad y de ahí sacáis de todo: el reel del pique, el de los ratings, el carrusel de reseña, los clips para stories y ese momento tonto que no planeas y siempre es el que peta. Más de una sesión por libro y no os dura ni dos meses.</div>
+</div>
+<div class="card">
+<div class="card-title">La cuenta la lleva una</div>
+<div class="card-body">Una sola persona tiene acceso a la cuenta, ya que si las tres tienen acceso activo, Instagram puede detectar inicios de sesión desde dispositivos y ubicaciones distintas, marcar la cuenta como sospechosa o limitarla temporalmente. Además, sin coordinación clara, una puede publicar algo que la otra no esperaba, responder comentarios con un tono diferente o subir una story que rompe la línea visual.</div>
+</div>
+<div class="divider"></div>
+
+</section>
+<section class="content-section" data-section="calendario" hidden="" id="calendario">
+<div class="section-heading"><div><div class="eyebrow">Calendario de publicación</div>
+<h2 class="sec-title" id="calendario-title">De la grabación al calendario</h2>
+<p class="sec-sub">Una hora de vídeo da contenido para toda la semana. Así se corta y se distribuye.</p></div><div aria-hidden="true" class="section-number">02</div></div>
+<section aria-labelledby="calendario-title" class="calendar-panel calendar-page">
+<div aria-label="Distribución semanal del contenido" class="calendar-list">
+<article class="calendar-item">
+<div aria-hidden="true" class="calendar-mark">L</div>
+<div>
+<p class="calendar-day">Lunes — El debate más caliente</p>
+<p class="calendar-copy">El momento donde más discutisteis. Si hay silencio incómodo, mejor todavía. Hook en texto: <strong>"No nos pusimos de acuerdo en esto."</strong></p>
+<span class="calendar-meta">Duración: 20–30 seg.</span>
+</div>
+</article>
+<article class="calendar-item">
+<div aria-hidden="true" class="calendar-mark">Mi</div>
+<div>
+<p class="calendar-day">Miércoles — Carrusel de reseña</p>
+<p class="calendar-copy">Hecho con lo que dijisteis en la sesión. Portada con el título y <strong>"os lo recomendamos"</strong> o <strong>"nos ha dejado frías"</strong>. Slides: sinopsis · personajes · ritmo · romance · valoración · veredicto. No hace falta grabar nada nuevo.</p>
+</div>
+</article>
+<article class="calendar-item">
+<div aria-hidden="true" class="calendar-mark">J</div>
+<div>
+<p class="calendar-day">Jueves — El momento más espontáneo</p>
+<p class="calendar-copy">Una reacción, una risa, algo que se escapó sin querer. Lo más viral casi nunca es el contenido más trabajado.</p>
+<span class="calendar-meta">Duración: 10–15 seg. Sin edición apenas.</span>
+</div>
+</article>
+<article class="calendar-item">
+<div aria-hidden="true" class="calendar-mark">V</div>
+<div>
+<p class="calendar-day">Viernes — Los ratings</p>
+<p class="calendar-copy">Las tres dicen su nota a la vez. Texto superpuesto con cada puntuación. Si no coinciden, ese es el gancho. Si coinciden, explicad por qué.</p>
+<span class="calendar-meta">Duración: 15 seg máximo.</span>
+</div>
+</article>
+<article class="calendar-item">
+<div aria-hidden="true" class="calendar-mark">∞</div>
+<div>
+<p class="calendar-day">Stories diarias — El proceso</p>
+<p class="calendar-copy">Fotos del libro mientras lo leéis. Capturas de WhatsApp donde debatís, con permiso. Encuestas del tipo <strong>"¿creéis que va a gustarnos?"</strong>. El making-of del club es también contenido.</p>
+</div>
+</article>
+</div>
+<div class="calendar-note">
+<strong>Clave de continuidad</strong>
+    La semana que no grabáis no es la semana que no publicáis. Tenéis el carrusel de reseña, las stories del proceso de lectura y siempre podéis reciclar un clip de la sesión anterior que no llegasteis a subir.
+  </div>
+</section>
+</section>
+<section class="content-section" data-section="preguntas" hidden="" id="preguntas">
+<div class="section-heading"><div><div class="eyebrow">La tarde de grabación</div>
+<h2 class="sec-title">Guion natural para grabar una reseña entre tres</h2>
+<p class="sec-sub">La idea no es hacer una reseña perfecta. Es sentaros las tres y hablar del libro como hablaríais después de terminarlo.</p></div><div aria-hidden="true" class="section-number">03</div></div>
+<div class="intro-static" aria-label="Antes de grabar">
+<span>Antes de grabar</span>
+<p>Una lleva un poco el debate: hace las preguntas, va pasando de un tema a otro y corta si os vais demasiado por las ramas. Pero habláis las tres. Lo bueno es que no parezca preparado.</p>
+<p>Mejor respuestas cortas, sinceras y con ejemplos. Si una no está de acuerdo, que lo diga. Si una está obsesionada y otra no entiende el hype, mejor todavía.</p>
+</div>
+<div aria-label="Índice de bloques de preguntas" class="question-index"><span class="question-index-label">Elige bloque</span><button aria-expanded="true" class="question-filter active" data-question="q1" type="button">Para entrar</button><button aria-expanded="false" class="question-filter" data-question="q2" type="button">El pique</button><button aria-expanded="false" class="question-filter" data-question="q3" type="button">La reseña</button><button aria-expanded="false" class="question-filter" data-question="q4" type="button">El cierre</button></div>
+<div class="question-group is-open" id="q1">
+<div class="group-head">
+<div>
+<span class="group-kicker">bloque de grabación</span>
+<h3>Para entrar</h3>
+<p>Estas preguntas son para arrancar rápido, ver cómo llegó cada una al libro y que la conversación empiece natural.</p>
+</div>
+<div aria-hidden="true" class="group-count">01</div>
+</div>
+<div class="q-item">
+<div class="q-text">📖 Vale, primera impresión: ¿os enganchó o no?</div>
+<div class="q-why">Sirve para arrancar rápido. Cada una contesta sin enrollarse mucho.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, desde el principio.</li><li>A mí me costó entrar.</li><li>Yo hasta la mitad no estaba dentro.</li><li>Me enganchó, pero tampoco fue una locura.</li><li>Me gustó, pero no me obsesionó.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">⏳ ¿En qué momento dijisteis: vale, ahora sí?</div>
+<div class="q-why">Para sacar el punto exacto donde el libro empezó a funcionar.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Cuando aparece él.</li><li>Cuando empieza la tensión.</li><li>Cuando se entiende un poco mejor el mundo.</li><li>Cuando pasa el primer giro fuerte.</li><li>Cuando la historia deja de presentar cosas y empieza a moverse.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🐌 ¿Hubo algún momento en plan: se me está haciendo un poco largo?</div>
+<div class="q-why">Sirve para hablar del ritmo sin sonar demasiado técnicas.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, al principio.</li><li>A mí una parte del viaje se me hizo eterna.</li><li>Hubo capítulos que me sobraban.</li><li>Yo lo leí bastante fácil, la verdad.</li><li>No se me hizo pesado, pero tampoco iba volando.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">📆 ¿Cuántos días habéis tardado en leerlo? Si es que lo habéis acabado…</div>
+<div class="q-why">Pregunta sencilla, pero da mucho juego. Si una lo ha devorado y otra lo ha ido dejando, ya hay conversación.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Me lo ventilé en dos días.</li><li>Lo fui leyendo poco a poco.</li><li>Lo dejé parado una semana.</li><li>Yo lo acabé por cabezonería.</li><li>Lo empecé fuerte y luego me desinflé un poco.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">👀 ¿Ya sabíais de qué iba o fuisteis un poco a ciegas?</div>
+<div class="q-why">Aquí ponéis en contexto si el libro venía muy recomendado o si lo leísteis sin expectativas.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Yo iba con muchísimo hype.</li><li>Yo no sabía casi nada.</li><li>A mí me lo habían vendido como el libro del año.</li><li>Yo iba con miedo porque todo el mundo hablaba de él.</li><li>Lo veía tanto por Instagram que al final caí, como siempre.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🎭 ¿Fue lo que esperabais o os sorprendió para bien o para mal?</div>
+<div class="q-why">Pregunta clara para comparar expectativa y realidad.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Yo pensaba que iba a tener más romance.</li><li>Me esperaba más fantasía.</li><li>Pensaba que sería más oscuro.</li><li>Me sorprendió que tuviera tanto drama.</li><li>Me vendieron una cosa y me encontré otra.</li><li>Creía que iba por un lado y luego fue por otro.</li></ul>
+</div>
+</div>
+<div class="question-group" hidden="" id="q2">
+<div class="group-head">
+<div>
+<span class="group-kicker">bloque de grabación</span>
+<h3>El pique</h3>
+<p>Aquí empieza lo bueno. En romantasy, fantasy y romance casi todo se decide por personajes, química, tensión, spice, mundo y drama. Si estáis todas de acuerdo, bien. Si no, mejor. El desacuerdo da vida, lamentablemente para la paz del grupo.</p>
+</div>
+<div aria-hidden="true" class="group-count">02</div>
+</div>
+<div class="q-item">
+<div class="q-text">🫠 Los protagonistas, ¿os han gustado o ha habido algún momento en que queríais decirles: pero qué haces?</div>
+<div class="q-why">Podéis hablar de ella, de él o de los dos. La gracia está en decir si conectasteis con ellos o si hubo decisiones que os sacaron de quicio.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>A mí ella me gustó desde el principio.</li><li>Yo la entendía, pero me ponía nerviosa.</li><li>Él me gustó más que ella.</li><li>Hubo decisiones que no las compré.</li><li>Los quería, pero necesitaba que pensaran dos segundos.</li><li>Me gustaban, pero a ratos me desesperaban.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">💘 Si hay interés amoroso: ¿os ha convencido o lo veis un poco forzado? ¿Entendéis el hype o no?</div>
+<div class="q-why">Corta, directa y muy de conversación.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí. Siguiente pregunta.</li><li>Al principio no, luego sí.</li><li>Me gustó, pero no entiendo el nivel de obsesión.</li><li>Yo no le vi tanto encanto.</li><li>Entiendo que guste, pero a mí no me cambió la vida.</li><li>Me parece buen personaje, pero no mi nueva religión.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🔥 ¿Creéis que la pareja tenía química de verdad?</div>
+<div class="q-why">Aquí podéis hablar de si el romance está bien construido o si aparece porque el libro dice que tiene que aparecer.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Para mí sí había tensión.</li><li>Yo no vi tanta química.</li><li>Había momentos buenos, pero otros muy forzados.</li><li>Me gustó más la tensión antes de que pasara nada.</li><li>Yo necesitaba más escenas para creérmelo.</li><li>A mí me faltó que hablaran más y se miraran menos.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🕯️ ¿El romance os pareció lento, rápido o bien llevado?</div>
+<div class="q-why">Ideal para romance y romantasy.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Para mí fue un slow burn bien hecho.</li><li>A mí se me hizo demasiado lento.</li><li>Pasó de cero a cien muy rápido.</li><li>Me faltaron más escenas entre ellos.</li><li>Para mí tuvo el ritmo justo.</li><li>Me gustó la tensión, pero luego me faltó desarrollo.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">✨ ¿Hubo alguna escena romántica de decir: vale, aquí sí?</div>
+<div class="q-why">Podéis hablarlo sin spoilers. Y si hay spice, se puede insinuar sin ponerse explícitas.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>La escena de la discusión.</li><li>El momento en el que se protegen.</li><li>Una frase concreta que me mató.</li><li>La escena de tensión, ya sabéis cuál.</li><li>No puedo decirlo sin hacer spoiler, pero vosotras sabéis.</li><li>Ese momento en el que no pasa nada, pero pasa todo.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🙈 ¿Y hubo alguna escena que os diera vergüenza ajena?</div>
+<div class="q-why">Más castellano que “cringe” y se entiende mejor.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, una frase me sacó completamente.</li><li>Hubo una declaración que no me la creí.</li><li>A mí no me dio vergüenza ajena, pero entiendo que pueda pasar.</li><li>Yo tuve que cerrar el libro un segundo.</li><li>Me dio un poco de apuro, pero con cariño.</li><li>Fue demasiado intenso para lo poco que se conocían.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🌶️ Nivel de spice: ¿cero, suave, medio o esto ya venía con ventilador?</div>
+<div class="q-why">Pregunta clara y muy fácil de convertir en clip o story.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Suavecito, más tensión que otra cosa.</li><li>Medio, no me lo esperaba tanto.</li><li>Había spice, pero tampoco una barbaridad.</li><li>Yo venía por la fantasía y me encontré el ventilador encendido.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🔥 ¿La tensión antes del spice os gustó más que el spice en sí?</div>
+<div class="q-why">Muy buena para romantasy, porque muchas veces la tensión previa funciona mejor que la escena explícita.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, para mí la tensión fue lo mejor.</li><li>Me gustó más el antes que el momento en sí.</li><li>Yo necesitaba más miradas y menos prisa.</li><li>La tensión estaba mejor construida que la escena.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">👀 ¿Hubo alguna escena de miradita, roce o frase que os dejara en plan: perdona?</div>
+<div class="q-why">Sirve para hablar de tensión sin spoilers.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, una frase concreta.</li><li>Una escena en la que casi no pasa nada, pero pasa todo.</li><li>Un momento de tensión que me tuvo sonriendo sola.</li><li>Una mirada que hacía más que tres capítulos enteros.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🌶️ ¿El spice estaba bien metido o parecía puesto porque tocaba?</div>
+<div class="q-why">Pregunta directa y útil.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Para mí tenía sentido.</li><li>A mí me pareció un poco metido con calzador.</li><li>Me faltó más tensión antes.</li><li>Me gustó, pero habría esperado un poco más.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🫣 ¿Hubo alguna frase o escena spicy que os sacara un poco de la historia?</div>
+<div class="q-why">Para sacar humor sin ser demasiado duras.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, una frase me dejó fuera.</li><li>Hubo un momento de cerrar el libro y respirar.</li><li>No me sacó, pero entiendo que a otra persona sí.</li><li>Me dio un poco de vergüenza, pero seguí leyendo, obviamente.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🫶 ¿Qué personaje secundario os ha gustado más?</div>
+<div class="q-why">Simple y clara.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>La amiga.</li><li>El villano.</li><li>El hermano.</li><li>El personaje que sale poco pero se come cada escena.</li><li>El que no era protagonista, pero debería.</li><li>Ese secundario que aparece tres veces y aun así te interesa más que medio reparto.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🧩 ¿Hay algún personaje del que os habría gustado saber más?</div>
+<div class="q-why">Para hablar de personajes desaprovechados o que os dejaron con curiosidad.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, totalmente.</li><li>Me faltaron más escenas con él.</li><li>Ese personaje tenía mucho más potencial.</li><li>Yo habría leído un libro entero sobre ese personaje.</li><li>Me pareció más interesante que algunos principales.</li><li>Me dejó con ganas de saber qué le pasaba por la cabeza.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">👥 ¿Alguna relación os gustó más que la pareja principal?</div>
+<div class="q-why">No tiene que ser romance. Puede ser una amistad, una rivalidad, una relación familiar o una tensión rara.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>La amistad me gustó más que el romance.</li><li>La relación con la hermana me pareció más interesante.</li><li>La rivalidad tenía más chispa que la pareja.</li><li>Yo necesitaba más de esos dos juntos.</li><li>Había una dinámica secundaria que me enganchó más.</li><li>Me creí más esa relación que la romántica.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🏰 ¿El mundo está bien explicado o al principio estabais perdidas?</div>
+<div class="q-why">Mucho mejor que decir “worldbuilding”, palabra que debería venir con manual de instrucciones y bebida caliente.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Yo entré fácil.</li><li>A mí me costó ubicarme.</li><li>Había demasiados nombres.</li><li>Necesité mapa mental, pero luego bien.</li><li>El mundo me gustó, pero al principio me costó.</li><li>Me habría venido bien un glosario, no te voy a mentir.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">⚔️ ¿La parte de fantasía os pareció importante o estaba más de fondo?</div>
+<div class="q-why">Perfecta para romantasy, porque a veces te venden fantasía épica y luego es romance con una espada apoyada en una esquina.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Para mí el mundo tenía peso.</li><li>Yo sentí que la fantasía era más decorado.</li><li>Me habría gustado que explicaran más la magia.</li><li>Me dio un poco igual el mundo, yo venía al drama.</li><li>Creo que la fantasía acompañaba bien, pero no era lo principal.</li><li>Me faltó más magia y menos miraditas.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🧠 ¿Qué os tenía más enganchadas: lo que estaba pasando o los personajes?</div>
+<div class="q-why">Muy clara y fácil de responder.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Yo seguía por la trama.</li><li>Yo seguía por ellos dos.</li><li>Me daba igual la guerra, quería romance.</li><li>A mí me interesaba más el misterio.</li><li>Los personajes me engancharon más que lo que estaba pasando.</li><li>La trama estaba bien, pero yo estaba aquí por el drama emocional.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">💥 ¿Hubo algún giro que os sorprendió de verdad? Sin spoilers.</div>
+<div class="q-why">Para hablar de plot twists sin reventar nada.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, uno no lo vi venir.</li><li>Yo lo sospechaba.</li><li>A mí me sorprendió más una reacción que el giro.</li><li>Hubo un momento que dije: perdona, ¿qué?</li><li>Me lo esperaba, pero aun así me gustó.</li><li>No me sorprendió tanto el giro, pero sí cómo pasó.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🥲 ¿Hubo algo que os parecía muy interesante y al final os decepcionó un poco?</div>
+<div class="q-why">Más natural que “prometía mucho”.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>La magia pintaba mejor de lo que luego fue.</li><li>El villano se quedó corto.</li><li>El conflicto parecía enorme y luego se resolvió rápido.</li><li>Me faltó más tensión en la parte final.</li><li>Había una trama que pintaba genial y luego pasó un poco sin más.</li><li>Me dio la sensación de que había ideas muy buenas, pero no todas se aprovecharon.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🎁 ¿Y algo que no esperabais y os gustó mucho?</div>
+<div class="q-why">Para equilibrar la crítica.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>El humor.</li><li>La amistad.</li><li>El drama familiar.</li><li>Un personaje que pensaba que me iba a dar igual.</li><li>La forma en la que se cerró una trama.</li><li>Una parte que parecía secundaria y al final me encantó.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">📄 ¿Os sobraron páginas o queríais más?</div>
+<div class="q-why">Pregunta sencilla y muy de lectoras.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Me sobraron cien páginas.</li><li>Yo quería más.</li><li>Me sobró una parte, pero el final me compensó.</li><li>Yo lo habría recortado un poco.</li><li>Se me hizo largo, pero no aburrido.</li><li>Me habría quedado un rato más en ese mundo.</li></ul>
+</div>
+</div>
+<div class="question-group" hidden="" id="q3">
+<div class="group-head">
+<div>
+<span class="group-kicker">bloque de grabación</span>
+<h3>La reseña</h3>
+<p>Esta parte sirve para sacar frases de carrusel, stories, caption y clips cortos. Aquí ya vais bajando la conversación a conclusiones más claras.</p>
+</div>
+<div aria-hidden="true" class="group-count">03</div>
+</div>
+<div class="q-item">
+<div class="q-text">📝 Si se lo contarais a una amiga, ¿cómo resumiríais el libro en una frase?</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Una chica con problemas, un chico peligroso y demasiadas decisiones intensas.</li><li>Fantasía, tensión y drama, básicamente.</li><li>Romance lento con mundo mágico de fondo.</li><li>Un libro para engancharte y enfadarte a la vez.</li><li>Drama, magia y gente tomando decisiones cuestionables.</li><li>Un libro de esos que te tiene comentando cada capítulo.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🎯 ¿A quién le diríais: este libro es para ti?</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Si te gusta el slow burn.</li><li>Si te gustan los personajes grises.</li><li>Si quieres romance con fantasía.</li><li>Si te gustan las sagas con drama.</li><li>Si disfrutas de la tensión antes del beso.</li><li>Si te va sufrir un poco mientras lees.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🚫 ¿Y a quién le diríais: igual este no es tu libro?</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Si necesitas acción desde el principio.</li><li>Si odias los romances lentos.</li><li>Si no tienes paciencia para mundos de fantasía.</li><li>Si no soportas protagonistas intensas.</li><li>Si quieres algo ligero y sin drama.</li><li>Si no te gustan las sagas largas.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">⭐ ¿Qué ha sido lo mejor del libro para vosotras?</div>
+<div class="q-why">Simple y útil.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>El romance.</li><li>La tensión.</li><li>El final.</li><li>Los personajes.</li><li>El mundo.</li><li>El caos emocional.</li><li>Lo fácil que era seguir leyendo.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🥲 ¿Y lo que menos os ha convencido?</div>
+<div class="q-why">Sin adornos.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>El ritmo.</li><li>Algunas decisiones.</li><li>El villano.</li><li>El final.</li><li>Que tardara tanto en arrancar.</li><li>Que algunas cosas se resolvieran demasiado rápido.</li><li>Que me faltó más de algunos personajes.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">✨ ¿Alguna escena de decir: uf, esta no se me va de la cabeza? Sin spoilers.</div>
+<div class="q-why">Se puede contestar fácil y deja intriga.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>La escena del baile.</li><li>La escena del bosque.</li><li>La conversación antes del final.</li><li>El momento en el que se miran y ya está, muerta.</li><li>Una escena de tensión que no puedo explicar sin destripar nada.</li><li>Ese capítulo que todas sabéis si lo habéis leído.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">💭 ¿Con qué sensación acabasteis el libro: contentas, enfadadas, tocadas o queriendo más?</div>
+<div class="q-why">Más natural que “qué regusto os ha dejado”.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Yo acabé obsesionada.</li><li>Yo acabé enfadada.</li><li>Yo necesito el siguiente.</li><li>Yo acabé bien, pero tampoco destrozada.</li><li>Me dejó pensando más de lo que esperaba.</li><li>Acabé con ganas de comentarlo con alguien.</li></ul>
+</div>
+</div>
+<div class="question-group" hidden="" id="q4">
+<div class="group-head">
+<div>
+<span class="group-kicker">bloque de grabación</span>
+<h3>El cierre</h3>
+<p>Aquí tenéis que ir a lo claro. Nada de cerrar flojo, que bastante floja está ya la capacidad de atención colectiva.</p>
+</div>
+<div aria-hidden="true" class="group-count">04</div>
+</div>
+<div class="q-item">
+<div class="q-text">⭐ Nota final, cada una a la vez.</div>
+<div class="q-why">Podéis hacerlo con dedos, pizarra, papel o diciendo la nota a la vez.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>3,5.</li><li>4.</li><li>5 y no acepto críticas.</li><li>2,75 porque soy así de concreta.</li><li>Le doy un 4, pero con peros.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">✅ ¿Lo recomendaríais, sí o no?</div>
+<div class="q-why">Primero sí o no. Luego ya matizáis.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, pero no a todo el mundo.</li><li>Sí, si te gusta el romance lento.</li><li>No si buscas fantasía pura.</li><li>Sí, pero con expectativas controladas.</li><li>Sí, aunque tiene cosas que entiendo que no gusten.</li><li>Lo recomendaría, pero sabiendo a quién.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">📚 Si es saga: ¿vais a leer el siguiente?</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Sí, necesito saber qué pasa.</li><li>Sí, aunque me enfade.</li><li>Me lo pensaré.</li><li>No, yo aquí me bajo.</li><li>Sí, pero espero que mejore algunas cosas.</li><li>Voy a seguir, pero con un poco de miedo.</li></ul>
+</div>
+<div class="q-item">
+<div class="q-text">🔚 Para cerrar: ¿con qué frase os quedáis de este libro?</div>
+<div class="q-why">Sirve para sacar frase final, caption o story.</div>
+<span class="q-examples-title">Ejemplos de respuesta</span>
+<ul class="q-examples"><li>Me enganchó aunque le vi fallos.</li><li>Vine por el romance y me quedé por el caos.</li><li>Lo disfruté, pero entiendo las críticas.</li><li>No es perfecto, pero me tuvo dentro.</li><li>Me dio justo el drama que venía buscando.</li><li>Lo terminé y necesitaba comentarlo con alguien.</li><li>Me ha rentado leerlo, pero no sé si se lo recomendaría a todo el mundo.</li></ul>
+</div>
+</div>
+</section>
+<section class="content-section" data-section="setup" hidden="" id="setup">
+<div class="section-heading"><div><div class="eyebrow">Antes de darle al rec</div>
+<h2 class="sec-title">El montaje de la grabación</h2>
+<p class="sec-sub">No hace falta equipo de cine. Hace falta que se os vea, que se os oiga y que parezca vuestra casa, no un plató.</p></div><div aria-hidden="true" class="section-number">04</div></div>
+<div class="setup-grid">
+<div class="setup-item"><div class="setup-k">Cámara</div><div class="setup-v">El mejor móvil de las tres, en selfie. Apoyado en algo, nunca en mano.</div></div>
+<div class="setup-item"><div class="setup-k">Encuadre</div><div class="setup-v">Las tres visibles y sin cortarse. Separaos del fondo un metro mínimo.</div></div>
+<div class="setup-item"><div class="setup-k">Luz</div><div class="setup-v">Ventana de frente o aro de luz detrás del móvil. A contraluz salís en negro.</div></div>
+<div class="setup-item"><div class="setup-k">Fondo</div><div class="setup-v">Una estantería, una mesa con libros, lo que sea que grite "aquí se lee".</div></div>
+<div class="setup-item"><div class="setup-k">Sonido</div><div class="setup-v">Silencio en la sala y hablar sin atropellaros. Subtítulos siempre: medio Instagram va sin sonido.</div></div>
+<div class="setup-item"><div class="setup-k">Edición</div><div class="setup-v">CapCut o Reels directo. El nombre de cada una la primera vez que sale. Máximo 2 colores de texto.</div></div>
+</div>
+</section>
+<footer class="footer">
+<strong><a href="https://www.instagram.com/literalclub_?igsh=MTBmZHA0MzE4ZGZobA%3D%3D&amp;utm_source=qr">literalclub_</a></strong>
+<span>estrategia de club de lectura · calendario · preguntas de grabación · setup sencillo</span>
+</footer>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navButtons = Array.from(document.querySelectorAll('.nav-link[data-target]'));
+  const sections = Array.from(document.querySelectorAll('.content-section[data-section]'));
+  const introToggle = document.querySelector('.intro-toggle');
+  const introPanel = document.getElementById('question-intro-panel');
+  const questionButtons = Array.from(document.querySelectorAll('.question-filter[data-question]'));
+  const questionGroups = Array.from(document.querySelectorAll('.question-group'));
+  const questionEmpty = document.querySelector('.question-empty');
+
+  function closeSections() {
+    sections.forEach(section => {
+      section.hidden = true;
+      section.classList.remove('is-open');
+    });
+    navButtons.forEach(button => {
+      button.classList.remove('active');
+      button.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function openSection(id, shouldScroll = true) {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const alreadyOpen = section.classList.contains('is-open');
+    if (alreadyOpen) {
+      if (shouldScroll) {
+        setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 20);
+      }
+      return;
+    }
+
+    closeSections();
+
+    section.hidden = false;
+    section.classList.add('is-open');
+
+    navButtons.forEach(button => {
+      const isActive = button.dataset.target === id;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    });
+
+    if (id === 'preguntas' && !document.querySelector('.question-group.is-open')) {
+      openQuestion('q1', false);
+    }
+
+    if (shouldScroll) {
+      setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 20);
+    }
+  }
+
+  navButtons.forEach(button => {
+    button.addEventListener('click', () => openSection(button.dataset.target));
+  });
+
+  if (introToggle && introPanel) {
+    introToggle.addEventListener('click', () => {
+      const willOpen = introPanel.hidden;
+      introPanel.hidden = !willOpen;
+      introPanel.classList.toggle('is-open', willOpen);
+      introToggle.classList.toggle('active', willOpen);
+      introToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      introToggle.querySelector('strong').textContent = willOpen ? 'Ocultar instrucciones iniciales' : 'Ver instrucciones iniciales';
+    });
+  }
+
+  function closeQuestions() {
+    questionGroups.forEach(group => {
+      group.hidden = true;
+      group.classList.remove('is-open');
+    });
+    questionButtons.forEach(button => {
+      button.classList.remove('active');
+      button.setAttribute('aria-expanded', 'false');
+    });
+    if (questionEmpty) questionEmpty.hidden = false;
+  }
+
+  function openQuestion(id, shouldScroll = true) {
+    const group = document.getElementById(id);
+    if (!group) return;
+
+    const alreadyOpen = group.classList.contains('is-open');
+    if (alreadyOpen) {
+      if (questionEmpty) questionEmpty.hidden = true;
+      questionButtons.forEach(button => {
+        const isActive = button.dataset.question === id;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      });
+      if (shouldScroll) {
+        setTimeout(() => group.scrollIntoView({ behavior: 'smooth', block: 'start' }), 20);
+      }
+      return;
+    }
+
+    closeQuestions();
+
+    group.hidden = false;
+    group.classList.add('is-open');
+    if (questionEmpty) questionEmpty.hidden = true;
+
+    questionButtons.forEach(button => {
+      const isActive = button.dataset.question === id;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    });
+
+    if (shouldScroll) {
+      setTimeout(() => group.scrollIntoView({ behavior: 'smooth', block: 'start' }), 20);
+    }
+  }
+
+  questionButtons.forEach(button => {
+    button.addEventListener('click', () => openQuestion(button.dataset.question));
+  });
+
+  const hash = window.location.hash.replace('#', '');
+  if (['estrategia', 'calendario', 'preguntas', 'setup'].includes(hash)) {
+    openSection(hash, false);
+  } else if (['q1', 'q2', 'q3', 'q4'].includes(hash)) {
+    openSection('preguntas', false);
+    openQuestion(hash, false);
+  } else {
+    openSection('estrategia', false);
+  }
+});
+</script>
+</body>
+</html>
